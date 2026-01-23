@@ -1,0 +1,46 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment & logs
+.env
+*.log
+
+# Generated model/data artifacts
+abstracts/*
+!abstracts/.gitkeep
+backend/abstracts/*
+!backend/abstracts/.gitkeep
+*.pt
+backend/*.pt
+
+# Backend resources
+# Keep backend/dragon/ code in the repo (model weights are ignored by the *.pt rule above)
+# Ensure backend/d3fend_output.owl is committed (ontology is required at runtime)
+
+# Frontend build artifacts (common)
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.next/
+
+# Generated visualizations and diagrams
+dragon_visualizations/
+dragon_instant_graphs/
+phd_thesis_graphs/
+*.png
+*.jpg
+*.jpeg
+*.svg
+view_diagrams.html
+
+# Reports (generated)
+dragon_phd_evaluation_report.txt
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

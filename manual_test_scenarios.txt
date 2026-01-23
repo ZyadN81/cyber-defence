@@ -1,0 +1,95 @@
+# 🐉 DRAGON Test Scenarios - Manual Testing
+
+Copy and paste these scenarios into your DRAGON interface for manual testing:
+
+# 🔰 SIMPLE SCENARIOS (Basic Threat Detection)
+
+## Simple 1: Basic Malware Detection 🦠
+
+Found suspicious executable file on employee workstation. The file has unusual name and is trying to contact external servers. Antivirus software flagged it as potentially malicious. Need to analyze threat level and recommend security actions.
+
+---
+
+## Simple 2: Phishing Email 📧
+
+Received email asking for password reset. Email claims to be from bank but sender address looks suspicious. Contains urgent message about account being compromised and asks to click link to verify identity.
+
+---
+
+## Simple 3: Network Security Issue 🌐
+
+Unusual network traffic detected from internal server to unknown external IP address. Traffic volume is higher than normal and happening outside business hours. Need assessment of potential security breach.
+
+---
+
+## Simple 4: Data Access Anomaly 📊
+
+Employee accessed customer database outside normal working hours. Downloaded large number of records to personal device. System flagged this as unusual behavior pattern requiring investigation.
+
+---
+
+## Simple 5: IoT Device Problem 📱
+
+Smart security camera in office lobby showing strange behavior. Device is consuming excessive bandwidth and making connections to unfamiliar servers. Firmware appears to have been modified.
+
+---
+
+# 🚀 ADVANCED SCENARIOS (Complex Multi-Vector Attacks)
+
+## Advanced 1: Sophisticated Phishing Campaign 🎣
+
+Received suspicious email claiming to be from Microsoft Office 365 security team. The email states that my account will be suspended due to unusual login activity from multiple countries including Russia and China. It contains a link that redirects to a fake Microsoft login page asking for username, password, and two-factor authentication codes. The sender domain appears legitimate but has subtle misspellings. The email creates urgency by threatening immediate account closure and requests immediate action to verify identity through the provided link.
+
+---
+
+## Advanced 2: Ransomware Attack with Network Propagation 🔒
+
+Our network monitoring detected unusual encrypted file activity starting from a single workstation in accounting department. The malware appears to be encrypting files with .crypted extension and leaving ransom notes demanding Bitcoin payment. Security logs show the attack originated from a malicious email attachment containing macro-enabled Excel file. The ransomware is now spreading laterally through SMB shares and attempting to disable backup systems. Network traffic analysis reveals communication with command and control servers in Eastern Europe. Critical business files including customer databases and financial records are being systematically encrypted across multiple departments.
+
+---
+
+## Advanced 3: Cloud Infrastructure Compromise ☁️
+
+Cloud security audit revealed multiple AWS S3 buckets with public read access containing sensitive customer data including personal information and payment details. Investigation shows unauthorized access from IP addresses in different geographic locations over past three weeks. The attackers exploited misconfigured IAM roles with excessive permissions allowing privilege escalation. Evidence suggests data exfiltration of approximately 500GB including customer databases, internal documents, and source code repositories. CloudTrail logs indicate creation of unauthorized EC2 instances for cryptocurrency mining and additional persistence mechanisms through Lambda functions.
+
+---
+
+## Advanced 4: IoT Device Compromise and Botnet Formation 🤖
+
+Network administrators detected abnormal traffic patterns from IoT devices including smart cameras, thermostats, and industrial sensors throughout our facility. These devices are generating suspicious outbound connections to external command and control infrastructure. Analysis reveals the devices were infected through default credentials and unpatched firmware vulnerabilities. The compromised IoT devices are participating in distributed denial of service attacks against external targets while also attempting to scan for additional vulnerable devices on internal networks. Device management systems show unauthorized firmware modifications and installation of malicious software designed to maintain persistent access.
+
+---
+
+## Advanced 5: Insider Threat with Data Exfiltration 👤
+
+Data loss prevention systems flagged unusual file access patterns by a senior developer with elevated database privileges. The employee has been systematically downloading large volumes of proprietary source code, customer databases, and intellectual property outside normal business hours. Investigation reveals use of encrypted external storage devices and cloud file sharing services to exfiltrate sensitive information. The individual has also been accessing systems and projects beyond their assigned responsibilities. Security logs show attempts to cover tracks by deleting audit trails and modifying access timestamps. Recent background check indicates potential financial distress and contact with competitors in the industry.
+
+---
+
+# 📊 EXPECTED RESULTS SUMMARY
+
+## Simple Scenarios (Basic Detection):
+- **Simple 1 (Malware):** Should detect malware, cyberthreat with MEDIUM-HIGH risk
+- **Simple 2 (Phishing):** Should detect phishing, cyberthreat with HIGH risk
+- **Simple 3 (Network):** Should detect networksecurity, cyberthreat with MEDIUM risk
+- **Simple 4 (Data Access):** Should detect dataprotection, privacy with MEDIUM-HIGH risk
+- **Simple 5 (IoT):** Should detect iotsecurity, networksecurity with MEDIUM risk
+
+## Advanced Scenarios (Complex Multi-Vector):
+- **Advanced 1 (Phishing):** Should detect phishing, cyberthreat, cyberattack with HIGH risk
+- **Advanced 2 (Ransomware):** Should detect ransomware, malware, cyberattack with HIGH risk  
+- **Advanced 3 (Cloud Attack):** Should detect cloudsecurity, dataprotection, cyberthreat with HIGH risk
+- **Advanced 4 (IoT Botnet):** Should detect iotsecurity, networksecurity, malware with MEDIUM-HIGH risk
+- **Advanced 5 (Insider Threat):** Should detect dataprotection, privacy, cybercrime with HIGH risk
+
+# 🎯 TESTING STRATEGY
+
+**Start with Simple Scenarios** to verify basic functionality:
+1. Test each simple scenario first
+2. Verify DRAGON detects basic threat types
+3. Check confidence levels are reasonable (40-70% for simple)
+
+**Progress to Advanced Scenarios** for comprehensive testing:
+1. Test complex multi-vector attacks
+2. Verify higher confidence levels (70-90% for advanced)
+3. Check D3FEND defense recommendations are appropriate
