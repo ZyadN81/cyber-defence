@@ -18,7 +18,7 @@ FastAPI backend that analyzes cybersecurity problem descriptions and maps them t
 - Install dependencies:
   - `pip install -r backend/requirements.txt`
 - Run the API:
-  - `python backend/app_enhanced.py`
+  - `python backend/app.py`
 - API docs:
   - Open http://localhost:8000/docs
 
