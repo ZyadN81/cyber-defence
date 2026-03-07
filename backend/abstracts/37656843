@@ -1,0 +1,1 @@
+"Design issues with DNP3 Secure Authentication version 5 are related to implementation complexity, parsing ambiguities, and coupled state. An analysis seeks to help the designers of similar functionality in other SCADA and industrial control system protocols to avoid the same pitfalls."

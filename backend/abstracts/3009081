@@ -1,0 +1,1 @@
+"We present GUEB a static tool detecting Use after Free vulnerabilities on disassembled code. This tool has been evaluated on a real vulnerability in the ProFTPD application (CVE-2011-4130)."

@@ -1,0 +1,1 @@
+"This paper is a survey of Montgomery reduction in the context of residue number system arithmetic. We present the main variants of RNS Montgomery reduction, some efficient embedded hardware implementations, applications in asymmetric cryptography (RSA, ECC, pairing, lattices), to end with the use of RNS against side-channel analysis and fault attacks."

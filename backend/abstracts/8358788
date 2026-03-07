@@ -1,0 +1,1 @@
+"Domain extender for the ideal cipher was firstly studied by Coron et al. (TCC 2010). The construction given by them doubles the domain. To extend the domain by a factor of t > 2, recursively applying their extender requires using the cipher exponential times, i.e. O(tlog23)$\\mathcal {O}(t

@@ -1,0 +1,1 @@
+"In this article a family of statistical randomness tests for binary strings are introduced, based on Golomb’s pseudorandomness postulate R-2 on the number of runs. The basic idea is to construct recursive formulae with computationally tenable probability distribution functions. The technique is illustrated on testing strings of \\(2

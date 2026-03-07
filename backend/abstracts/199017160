@@ -1,0 +1,1 @@
+"Here, the authors provide a derivation of an improvement to Kanayama's elliptic curve scalar multiplication algorithm using division polynomials. In addition, they also provide experimental results and show that the improvement is useful when the elliptic curve under consideration is defined over large prime fields."

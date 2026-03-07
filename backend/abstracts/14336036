@@ -1,0 +1,1 @@
+"As virtualization becomes increasingly mainstream, virtual machine introspection techniques and tools are evolving to monitor VM behavior. A survey of existing approaches highlights key requirements, which are addressed by a new tool suite for the Xen VM monitoring system."

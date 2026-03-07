@@ -1,0 +1,1 @@
+"The evaluation of a cryptographic primitive (such as a block/stream cipher algorithm or pseudorandom bit generator) involves statistical testing meant to identify nonrandom behavior that can be exploited by cryptanalyzing the primitive."

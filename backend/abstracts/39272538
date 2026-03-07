@@ -1,0 +1,1 @@
+"In this study, combining the biclique cryptanalysis with the meet-in-the-middle (MITM) attack, the authors present the first key recovery method for the full ARIA-256 faster than brute-force. The attack requires 280 chosen plaintexts, and the time complexity is about 2255.2 full-round ARIA encryptions."

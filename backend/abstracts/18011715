@@ -1,0 +1,1 @@
+"Malware is notoriously difficult to combat because it appears and spreads so quickly. In this article, we describe the design and implementation of CWSandbox, a malware analysis tool that fulfills our three design criteria of automation, effectiveness, and correctness for the Win32 family of operating systems"

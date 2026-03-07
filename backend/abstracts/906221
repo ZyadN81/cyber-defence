@@ -1,0 +1,1 @@
+"Perfect nonlinear functions from a finite group $G$ to another one $H$ are those functions $f: G \\rightarrow H$ such that for all nonzero $\\alpha \\in G$, the derivative $d_{\\alpha}f: x \\mapsto f(\\alpha x) f(x)

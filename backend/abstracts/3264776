@@ -1,0 +1,1 @@
+"In this paper, we show a method of exhaustive search on a password system that uses SHA-1 iteratively. Our method uses both the technique shown in Steube [16] and a technique for computing repetitions of SHA-1. Combining these two techniques reduces the total number of operations. We also show how to apply our method to MS Office (Microsoft Office) 2007/2010."

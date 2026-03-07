@@ -1,0 +1,1 @@
+"We present a simple protocol for two-playersecure circuit evaluation. The protocol enables players C and D to cooperate in the computation off(x) while D conceals her datax from C and C conceals his circuit forf from D. The protocol is based on the technique ofhiding information from an oracle [AFK]."

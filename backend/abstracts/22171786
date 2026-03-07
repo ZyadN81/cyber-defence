@@ -1,0 +1,1 @@
+"To recover erased data from iOS devices, specialists use a brute-force method to decrypt the passwords, then extract data images directly from low-level NAND storage and analyze the redundancy caused by its file translation layer (FTL) behavior. iOS devices' garbage collection strategy significantly affects data recovery."

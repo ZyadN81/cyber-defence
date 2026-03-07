@@ -1,0 +1,1 @@
+"For pseudo-random generators where one or several LFSRs are combined by a memoryless function, it is known that the output sequences are correlated to certain LFSR-sequences whose correlation coefficients ct satisfy the equation ∑ic2i= 1. In this paper it is proved that a corresponding result also holds for generators whose LFSRs are connected to a combiner with memory."

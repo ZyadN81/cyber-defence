@@ -1,0 +1,1 @@
+"Any added complexity in a software system will increase the possible program states, introducing a larger attack surface and the possibility of more exploitable flaws. JIT engines, however, alter the environment in which they execute in far more interesting ways, not only through implementation flaws but also by their fundamental operation modes."

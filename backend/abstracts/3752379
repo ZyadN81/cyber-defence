@@ -1,0 +1,1 @@
+"We define a set of matrices over a finite alphabet where all possible overlaps between any two matrices are forbidden. The set is also enumerated by providing some recurrences counting particular classes of restricted words. Moreover, we analyze the asymptotic cardinality of the set according to the parameters related to the construction of the matrices."

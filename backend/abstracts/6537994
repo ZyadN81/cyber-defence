@@ -1,0 +1,1 @@
+"We prove that a system of linear congruences of a particular form has at most a unique solution below a certain bound which can be computed eciently. Using this result we develop attacks against the DSA schemes which, under some assumptions, can provide the secret key in the case where one or several signed messages are available."

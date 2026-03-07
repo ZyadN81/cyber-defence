@@ -1,0 +1,1 @@
+"We prove that Tandem-DM, one of the two \"classical\" schemes for turning an n-bit blockcipher of 2n-bit key into a double-block-length hash function, has birthday-type collision resistance in the ideal cipher model. For $$n=128$$n=128, an adversary must make at least $$2

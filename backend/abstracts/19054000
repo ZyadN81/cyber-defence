@@ -1,0 +1,1 @@
+"Variants of the Rabin cryptosystem are built to overcome the decryption failure problem encountered by the cryptosystem. In this paper, we perform a theoretical simple power analysis on one of the variants that operates its decryption procedure via modular multiplication where the moduli \\(N_1=pq\\) is kept secret while the moduli \\(N=p

@@ -1,0 +1,1 @@
+"The IEEE Security in Storage Working Group (SISWG) has developed the XTS mode of the Advanced Encryption Standard (AES) that the IEEE 1619-2007 standard defines. (XTS stands for XEX-based tweaked codebook mode with ciphertext stealing.) This mode works within the constraints of hard disks while keeping the security that the AES algorithm provides."

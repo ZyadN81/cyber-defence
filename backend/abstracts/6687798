@@ -1,0 +1,1 @@
+"If factoring is hard, this paper shows that straight line programs cannot efficiently solve the low public exponent RSA problem. More precisely, no efficient algorithm can take an RSA public key as input and then output a straight line program that efficiently solves the low public exponent RSA problem for the given public key--unless factoring is easy."

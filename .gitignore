@@ -16,6 +16,7 @@ abstracts/*
 !abstracts/.gitkeep
 backend/abstracts/*
 !backend/abstracts/.gitkeep
+!backend/abstracts/**
 *.pt
 backend/*.pt
 

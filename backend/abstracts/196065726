@@ -1,0 +1,1 @@
+"2nd-order attacks utilize power values at two leakage points to break cryptographic systems protected by 1st-order random masking. Without profiling, the attacker do not know the exact location of the two leakage points. Standard 2nd-order attacks with an exhaustive search over two windows of size $n_w$nw has computational complexity $\\mathcal {O}(n_w

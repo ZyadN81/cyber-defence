@@ -1,0 +1,1 @@
+"The problem of the consistent naming of malcode is an old story. Here is a listing of how different anti-malware vendors chose to name the Conficker/Downadup/Kido malware: ::: F-Secure: Worm:W32/Downadup.gen!A Kaspersky: Net-Worm.Win32.Kido.cp McAfee: W32/Conficker.worm.gen.a Microsoft: Worm:Win32/Conficker.gen!B Sunbelt: Worm-Win32/Conficker.gen!A TrendMicro: WORM_DOWNAD.AD"

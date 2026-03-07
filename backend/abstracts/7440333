@@ -1,0 +1,1 @@
+"Many recent malware implementations employ virtual machines to carry out their malicious activities. These are hard to detect because their states can't be accessed by antivirus software running in the native OS. An approach for OS fingerprinting using TCP SYN packets in an enterprise environment can detect the presence of unauthorized OSs."

@@ -1,0 +1,1 @@
+"A discrete optimization model is proposed to allocate redundancy to critical IT functions for disaster recovery planning. The objective is to maximize the overall survivability of an organization's IT functions by selecting their appropriate redundancy levels. A solution procedure based on probabilistic dynamic programming is presented along with two examples."

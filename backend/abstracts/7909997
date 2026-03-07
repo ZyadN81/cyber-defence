@@ -1,0 +1,1 @@
+"This paper focuses on stack inspection, the access control mechanism implemented in Java and the CLR. We introduce a static analysis which safely approximates the access rights granted to code at run time. This analysis provides us with the basis to reduce the run-time overhead of stack inspection and in combination with other program transformations."

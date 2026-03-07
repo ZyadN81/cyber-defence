@@ -1,0 +1,1 @@
+"In this paper it is shown how to speed up the multiplication step on elliptic curves defined over small odd characteristic finite fields. The method used is a generalization of a recent method of Muller and Solinas. Various implementation issues are discussed and described with the use of timings from an implementation of the methods."

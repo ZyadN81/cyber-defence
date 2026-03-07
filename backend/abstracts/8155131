@@ -1,0 +1,1 @@
+"Abstract We construct an algorithm that permits a large group of individuals to reach consensus on a random number, without having to rely on any third parties. The algorithm works with high probability if there are less than 50 of colluding parties in the group. We describe also some modifications and generalizations of the algorithm."

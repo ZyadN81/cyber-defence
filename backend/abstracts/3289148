@@ -1,0 +1,1 @@
+"This article presents a verifiable classroom voting (VCV) system, which provides end-to-end verifiability without tallying authorities. VCV supports voting through mobile phones with constrained computing resources, and reports the tallying results instantly after voting is finished along with cryptographic proofs that enable the public to verify the tallying integrity."

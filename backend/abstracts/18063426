@@ -1,0 +1,1 @@
+"Under the assumption that solving the discrete logarithm problem modulo an n-bit safe prime p is hard even when the exponent is a small c-bit number, we construct a new pseudo-random bit generator. This new generator outputs n – c – 1 bits per exponentiation with a c-bit exponent and is among the fastest generators based on hard number-theoretic problems."

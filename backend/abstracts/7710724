@@ -1,0 +1,1 @@
+"In this article, we present a new sequential multiplier for extended binary finite fields. Like its existing counterparts, the proposed multiplier has a linear complexity in flip-flop or temporary storage requirements, but a sub-linear complexity in gate counts. For the underlying polynomial multiplication, the proposed field multiplier relies on the Horner scheme."

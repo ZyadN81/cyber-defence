@@ -1,0 +1,1 @@
+"DNS security extensions (DNSSEC) is a proposed set of standards for securely authenticating information in the Domain Name System. DNSSEC validators check the digital signatures on DNS data. However, designing a validator worth the operational costs is a challenge."

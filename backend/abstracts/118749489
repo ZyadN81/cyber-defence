@@ -1,0 +1,1 @@
+"Finding a q{sup th} root in GF(p), where p and q are prunes, q is large and q{sup 2} divides (p{minus}1) is a difficult problem equivalent to the discrete logarithm problem using an element of order q as the base. This paper describes an authenticated key exchange algorithm utilizing this hard problem."

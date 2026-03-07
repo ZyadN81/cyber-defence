@@ -1,0 +1,1 @@
+"We describe the use of explicit isogenies to translate instances of the Discrete Logarithm Problem (DLP) from Jacobians of hyperelliptic genus 3 curves to Jacobians of non-hyperelliptic genus 3 curves, where they are vulnerable to faster index calculus attacks. We provide explicit formulae for isogenies with kernel isomorphic to $(\\ZZ/2\\ZZ)

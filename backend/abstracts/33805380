@@ -1,0 +1,1 @@
+"A state-machine formulation is given for forward correct ability in event systems, to provide a type of unwinding result for this information flow security property. We show also how regular expression notation provides an easy mechanical tool for verifying forward correct ability for small systems, which is necessary for the effective presentation of examples and exercises."

@@ -1,0 +1,1 @@
+"In this paper we present a cryptanalytic technique, based on impossible differentials. We use it to show that recovering keys of Skipjack reduced from 32 to 31 rounds can be performed faster than exhaustive search. We also describe the Yoyo game (a tool that can be used against reduced-round Skipjack), and other properties of Skipjack."

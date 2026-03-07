@@ -1,0 +1,1 @@
+"In this work, we explore a combinatorial optimization problem stemming from the Naccache–Stern cryptosystem. We show that solving this problem results in bandwidth improvements, and suggest a polynomial-time approximation algorithm to find an optimal solution. Our work suggests that using optimal radix encoding results in an asymptotic 50% increase in bandwidth."

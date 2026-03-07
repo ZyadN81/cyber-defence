@@ -1,0 +1,1 @@
+"In this paper, we report the results of a comprehensive study of the security level versus the execution performance (and resource requirements) for hardware implementations of small elliptic curves, particularly targeted for lightweight applications, such as RFID tags and sensor nodes. The case study was performed for small elliptic curves (41–163 bits) over GF(\\(2

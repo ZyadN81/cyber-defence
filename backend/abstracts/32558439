@@ -1,0 +1,1 @@
+"Authentication within the X86 CPU system management mode has significant benefits for system security. The author's mechanism lets system firmware access cipher information from a software application image to check code integrity for security-sensitive code."

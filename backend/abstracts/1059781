@@ -1,0 +1,1 @@
+"We describe a new technique for evaluating polynomials over binary finite fields. This is useful in the context of anti-DPA countermeasures when an S-box is expressed as a polynomial over a binary finite field. For \\(n\\)-bit S-boxes, our new technique has heuristic complexity \\({\\fancyscript{O}}(2

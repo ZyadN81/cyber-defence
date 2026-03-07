@@ -1,65 +1,59 @@
 # Cybersecurity Analysis Service
 
-FastAPI backend that analyzes cybersecurity problem descriptions and maps them to MITRE D3FEND tactics using DRAGON/DRAGON+ semantic similarity. The repository is organized into separate backend and frontend folders.
+FastAPI backend that analyzes cybersecurity problem statements and maps them to MITRE D3FEND tactics.
 
-## Repository Structure
+## Quick Start (Windows PowerShell)
 
-```
-├── backend/                # FastAPI backend and resources
-│   ├── app_enhanced.py     # Main backend service
-│   ├── requirements.txt    # Backend dependencies
-│   ├── d3fend_output.owl   # D3FEND ontology
-│   └── abstracts/          # Local abstract texts (ignored in git)
-└── frontend/               # Frontend (if present)
-```
-
-## Backend Setup (Windows PowerShell)
-
-- Install dependencies:
-  - `pip install -r backend/requirements.txt`
-- Run the API:
-  - `python backend/app.py`
-- API docs:
-  - Open http://localhost:8000/docs
-
-## Data Requirements
-
-- Ensure these resources exist:
-  - [backend/dragon/](backend/dragon/) — DRAGON/DRAGON+ code and configs (include code; model weights `*.pt` are ignored)
-  - [backend/abstracts/](backend/abstracts/) — Local abstract text files (large; kept out of git except `.gitkeep`)
-  - [backend/d3fend_output.owl](backend/d3fend_output.owl) — D3FEND ontology file
-- Embedding caches (`*.pt`) are generated on first run and are git-ignored
-
-## Frontend
-
-- Place your frontend app in [frontend/](frontend/). Common build outputs are ignored via `.gitignore` (e.g., `node_modules/`, `dist/`, `build/`, `.next/`).
-- Run locally (Windows PowerShell):
+### 1) Clone
 
 ```powershell
-cd frontend
+git clone https://github.com/ZyadN81/cyber-defence.git
+cd cyber-defence\backend
+```
+
+### 2) Install dependencies
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+### 3) Add required backend assets
+
+Before first run, ensure these exist:
+
+- `backend/d3fend_output.owl`
+- `backend/abstracts/` with abstract text files
+- `backend/dragon/` with DRAGON source files (or run with DRAGON+ fallback if DRAGON code is unavailable)
+
+If `backend/abstracts/` is empty, provide a prebuilt embedding cache at:
+
+- `backend/enhanced_dragon_embeddings.pt`
+
+### 4) Run backend
+
+```powershell
+python app.py
+```
+
+API docs: http://localhost:8000/docs
+
+## Frontend Run
+
+```powershell
+cd ..\frontend
 npm install
 npm run dev
 ```
 
-- Build for production:
+## API Endpoints
 
-```powershell
-cd frontend
-npm run build
-```
-
-- Notes:
-  - Typical dev servers run on ports like 3000 (Next.js/CRA) or 5173 (Vite). Check your framework output.
-  - If your frontend calls the backend API, set the base URL to http://localhost:8000.
-
-## Key Endpoints
-
-- `POST /analyze` — Analyze a problem description and return tactics and matches
-- `GET /health` — Health check
-- `GET /model-info` — Returns model configuration and availability
+- `POST /analyze`
+- `GET /health`
+- `GET /model-info`
+- `GET /figures`
 
 ## Notes
 
-- First run downloads models and builds embeddings; subsequent runs are faster
-- GPU is used if available; otherwise CPU is used
-- Large data (abstracts, caches) are ignored via `.gitignore`; use Git LFS if you want to version them
+- Run backend from `backend/` using `python app.py`.
+- First run can take longer because models/downloads and embedding generation happen at startup.
+- If startup fails, the backend now prints explicit missing-file setup messages.

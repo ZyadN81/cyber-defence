@@ -1,0 +1,1 @@
+"Analysis of a hardware security module (HSM) revealed two flaws that could lead to security problems. The first involved key deletion; the second involved unauthorized members of a group of HSMs. Neither flaw is probably fatal, if organizations develop organizational ways to work around it. However, for organizations to apply the solutions, they must be aware of the flaws."

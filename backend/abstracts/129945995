@@ -1,0 +1,1 @@
+"The maximum possible cardinality of a binary code of length n and Hamming distance d is denoted by A(n,d). The current lower bound for A(16,5) is 256, as implied by the Nordstrom–Robinson code. We improve this bound to 258 by presenting a binary code of length 16, minimum distance 5 and cardinality 258. The code is found using a known construction and Tabu Search."

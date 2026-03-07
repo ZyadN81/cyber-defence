@@ -1,0 +1,1 @@
+"In this paper we revisited a method to identify computers by their clocks skew computed from TCP timestamps. We introduced our own tool to compute clock skew of computers in a network. We validated that the original method is suitable for the computer identification but we also discovered that Linux hosts running NTP had become immune to the identification."

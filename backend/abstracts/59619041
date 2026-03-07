@@ -1,0 +1,1 @@
+"Using a dataset containing about 50,000 samples from Brazilian cyberspace, we show that relying solely on conventional machine-learning systems without taking into account the change of the subject's concept decreases the performance of classification, emphasizing the need to update the decision model immediately after concept drift occurs."

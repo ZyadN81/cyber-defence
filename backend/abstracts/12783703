@@ -1,0 +1,1 @@
+"Attackers can gain unauthenticated remote control of the program counter through CVE-2010-3972, a vulnerability in Microsoft's Internet Information Services FTP 7.5. This example of primitive chaining shows that attackers can combine information about the operating system, application, and vulnerability to create a viable exploit."

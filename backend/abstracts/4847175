@@ -1,0 +1,1 @@
+"This note continues a sequence of attempts to define efficient digital signature schemes based on low-degree polynomials, or to break such schemes. We consider a scheme proposed by Satoh and Araki [5], which generalizes the Ong--Schnorr--Shamir scheme to the noncommutative ring of quaternions. We give two different ways to break the scheme."

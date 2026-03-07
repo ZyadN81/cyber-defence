@@ -1,0 +1,1 @@
+"We describe an efficient system for ensuring code integrity of an operating system (OS), both its own code and application code. The proposed system can protect from an attacker who has full control over the OS kernel. An evaluation of the system's performance suggests the induced overhead is negligible."

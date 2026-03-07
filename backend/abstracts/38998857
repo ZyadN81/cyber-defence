@@ -1,0 +1,1 @@
+"Data-dependent permutations (DDP) are introduced as basic cryptographic primitives to construct fast hardware-oriented ciphers. Some variants of the DDP operations and their application in the cipher CIKS-1 are considered. A feature of CIKS-1 is the use of both the data-dependent transformation of round subkeys and the key-dependent DDP operations."

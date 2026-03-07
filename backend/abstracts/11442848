@@ -1,0 +1,1 @@
+"An efficient algorithm is given for inferring sequences produced by linear congruential pseudorandom number generators when some of the low-order bits of the numbers produced are unavailable. These generators have the formXn=aXn−1+b (modm). We assume that the constantsa,b, andm are unknown, and thatt=O(log logm) of the low-order bits are not used."

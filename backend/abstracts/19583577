@@ -1,0 +1,1 @@
+"To enhance transparency, many new voting systems produce audit data that lets voters verify that their ballot was included in the tally, and lets outsiders verify that the tally was calculated correctly. However, the cryptographic techniques used in these systems provide confidentiality for a few decades only. This threatens ballot privacy in the long term."

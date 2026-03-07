@@ -1,0 +1,1 @@
+"In this paper we propose a three participants variation of the Diffie--Hellman protocol. This variation is based on the Weil and Tate pairings on elliptic curves, which were first used in cryptography as cryptanalytic tools for reducing the discrete logarithm problem on some elliptic curves to the discrete logarithm problem in a finite field."

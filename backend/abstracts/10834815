@@ -1,0 +1,1 @@
+"We discuss two different ways to speed up exponentiation in nonprime finite fields: on the one hand, reduction of the total number of operations, and on the other hand, fast computation of a single operation. Two data structures are particularly useful: sparse irreducible polynomials and normal bases. We report on implementation results for our methods."

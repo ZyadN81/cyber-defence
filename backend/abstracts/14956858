@@ -1,0 +1,1 @@
+"Fully proving the correctness of entire real-world software stacks is still not practical, despite impressive recent advances. At the same time, classic system testing is increasingly insufficient to make modern systems reliable and secure. To make progress, we must fuse formal methods with traditional testing practice into a unified approach."

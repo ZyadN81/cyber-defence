@@ -1,0 +1,1 @@
+"In this paper we further defend our selection of the AES as a prime candidate for recycling, by looking at its underlying design strategy - the wide-trail strategy - in the context of security margins, an often misunderstood metric for comparing block ciphers. We show that it's not always as easy as who has the most rounds; it's what's happening inside the round."

@@ -1,0 +1,1 @@
+"In [2] the authors show how to construct the building blocks for perfect zero-knowledge proofs called \"blobs\" using the discrete log problem. Contrary to what they remark on p. 73 of [2], we argue that the Mordell group of an elliptic curve is more suitable than the multiplicative group of a finite field for the construction of a hard cryptographic suite of problems."

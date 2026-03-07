@@ -1,0 +1,1 @@
+"The authors take a look back at VAX/SVS, a high-assurance virtual machine monitor (VMM) project from the 1980s, extracting its most pertinent lessons, including reference monitor architectural principles, approaches to verifiable and tamperproof access control, the benefits of layering, the impacts of minimization and verification, and the reasons behind its cancellation."

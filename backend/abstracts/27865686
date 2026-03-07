@@ -1,0 +1,1 @@
+"In this paper we demonstrate that widely known identification systems, such as the public-file-based Feige-Fiat-Shamir scheme, can be insecure if proper care is not taken with their implementation. We suggest possible solutions. On the other hand, identity-based versions of the Feige-Fiat-Shamir scheme are conceptually more complicated than necessary."

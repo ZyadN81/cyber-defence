@@ -1,0 +1,1 @@
+"This article is concerned with various arithmetic operations inGF(2 m ). In particular we discuss techniques for computing multiplicative inverses and doing exponentiation. The method used for exponentiation is highly suited to parallel computation. All methods achieve much of their efficiency from exploiting a normal basis representation in the field."

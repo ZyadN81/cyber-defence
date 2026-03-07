@@ -1,0 +1,1 @@
+"We study the relationship between the multiparty communication complexity of functions over certain communication topologies and the complexity of inverting those functions. We show that if a function ofn variables has aring-protocol or atree-protocol of communication complexity bounded by ?, then there is a circuit of size $$2

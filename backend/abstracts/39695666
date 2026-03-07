@@ -1,0 +1,1 @@
+"This installment of Crypto Corner takes a concise look at some of the issues responsible for why cryptography usually ends up looking bad, in practice, and fails to establish the right threat model, let alone realize it. Ultimately, this failure is largely due to a lack of cryptographic competence and the dreaded habit of crammed-in-and-cobbled-together design."

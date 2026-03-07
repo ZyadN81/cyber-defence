@@ -1,0 +1,1 @@
+"This work presents a new method to compute the GHASH function involved in the Galois/Counter Mode of operation for block ciphers. If \\({X= X_1\\ldots X_n}\\) is a bit string made of n blocks of 128 bits each, then the GHASH function essentially computes \\({X_1H

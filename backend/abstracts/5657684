@@ -1,0 +1,1 @@
+"In this article we offer guidelines for the determination of key sizes for symmetric cryptosystems, RSA, and discrete logarithm-based cryptosystems both over finite fields and over groups of elliptic curves over prime fields. Our recommendations are based on a set of explicitly formulated parameter settings, combined with existing data points about the cryptosystems."

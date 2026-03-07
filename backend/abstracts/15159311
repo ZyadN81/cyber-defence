@@ -1,0 +1,1 @@
+"Undocumented assumptions are often the cause of serious software system failure. Thus, to reduce such failures, developers must become better at discovering and documenting their assumptions. In this article, we focus on common categories of assumptions in software, discuss methods for recognizing when developers are making them, and recommend techniques for documenting them."

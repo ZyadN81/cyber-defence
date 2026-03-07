@@ -1,0 +1,1 @@
+"Abstract We present a variation on the CM method that produces elliptic curves over prime fields with nearly prime order that do not admit many efficiently computable isogenies. Assuming the Bateman–Horn conjecture, we prove that elliptic curves produced this way almost always have a large embedding degree, and thus are resistant to the MOV attack on the ECDLP."

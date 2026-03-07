@@ -1,0 +1,1 @@
+"Modern I/O architectures are quite complex, so keeping a virtual machine monitor (VMM), or hypervisor, small is difficult. Many current hypervisors move the large, complex, and sometimes proprietary device drivers out of the VMM into one or more partitions, leading to inherent problems in complexity, security, and performance."

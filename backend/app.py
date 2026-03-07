@@ -72,6 +72,46 @@ CONFIDENCE_FLOOR = 20
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+
+def _count_data_files(folder: str) -> int:
+    """Count non-hidden files in a folder recursively."""
+    if not os.path.isdir(folder):
+        return 0
+    count = 0
+    for root, _dirs, files in os.walk(folder):
+        for name in files:
+            if not name.startswith("."):
+                count += 1
+    return count
+
+
+def _validate_runtime_assets() -> None:
+    """Fail fast with clear setup guidance when required assets are missing."""
+    if not os.path.exists(ONTOLOGY_PATH):
+        raise FileNotFoundError(
+            "Missing ontology file: "
+            f"{ONTOLOGY_PATH}. Run from backend folder using `python app.py` "
+            "and ensure `backend/d3fend_output.owl` is present."
+        )
+
+    if not os.path.isdir(ABSTRACTS_FOLDER):
+        raise FileNotFoundError(
+            "Missing abstracts directory: "
+            f"{ABSTRACTS_FOLDER}. Add dataset files under `backend/abstracts/`."
+        )
+
+    abstracts_count = _count_data_files(ABSTRACTS_FOLDER)
+    has_cache = os.path.exists(EMBEDDINGS_PATH)
+    if abstracts_count == 0 and not has_cache:
+        raise RuntimeError(
+            "No abstract data files found in `backend/abstracts/` and no embedding cache "
+            "found at `backend/enhanced_dragon_embeddings.pt`. Add abstracts or provide a "
+            "prebuilt embedding cache before starting the backend."
+        )
+
+
+_validate_runtime_assets()
+
 # 3) Ontology (D3FEND) helpers
 # ----------------------------
 # Load D3FEND Knowledge Graph once at startup (XML/RDF format)

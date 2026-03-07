@@ -1,0 +1,1 @@
+"Modern enterprises centrally monitor their systems by collecting logs using audit reduction tools that can search, sort, and alert. The author describes how developers can support such monitoring by writing logging mechanisms that account for the strengths and weaknesses of audit reduction tools."

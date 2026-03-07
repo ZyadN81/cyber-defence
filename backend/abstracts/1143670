@@ -1,0 +1,1 @@
+"Two new cryptographic methods--linear secret sharing (LSS) and fully homomorphic encryption (FHE)--allow computing on sensitive data without decrypting it. LSS and FHE differ in speed, ease of use, computational primitives, and cost."

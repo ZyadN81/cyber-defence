@@ -1,0 +1,1 @@
+"The rth-order nonlinearity, where r ≥ 1, of an n-variable Boolean function f, denoted by nl r (f), is defined as the minimum Hamming distance of f from all n-variable Boolean functions of degrees at most r. In this paper we obtain a lower bound of the third-order nonlinearities of Kasami functions of the form \\(Tr_{1}

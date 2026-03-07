@@ -1,0 +1,1 @@
+"This paper investigates the connections between three properties of a binary function. These properties are important in cryptography and are the Strict Avalanche Criterion, balance, and correlation immunity. We derive necessary and sufficient conditions for a function to possess various combinations of these properties, and count the number of such functions."

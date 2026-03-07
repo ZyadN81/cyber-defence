@@ -1,0 +1,1 @@
+"In this paper we describe several ideas related to differential fault attack (DFA) on MICKEY 2.0, a stream cipher from eStream hardware profile. Using the standard assumptions for fault attacks, we first show that if the adversary can induce random single bit faults in the internal state of the cipher, then by injecting around \\(2

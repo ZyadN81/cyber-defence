@@ -1,0 +1,1 @@
+"In this paper we look at the Gabidulin version of the McEliece cryptosystem (GPT) and its variants. We give an overview over the existing structural attacks on the basic scheme, and show how to combine them to get an effective attack for every GPT variant. As a consequence, there are no secure parameter sets left for GPT variants, which one would like to use in practice."

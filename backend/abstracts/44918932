@@ -1,0 +1,1 @@
+"Abstract We show that the round functions of the KASUMI block cipher for odd and even round type generate the alternating group on the message space. Moreover, under the assumption of independent round keys, we prove that also the KASUMI two-round functions and the KASUMI encryption functions generate the alternating group."

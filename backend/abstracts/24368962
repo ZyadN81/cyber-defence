@@ -1,0 +1,1 @@
+"In this short note we describe an elementary technique which leads to a linear algorithm for solving the discrete logarithm problem on elliptic curves of trace one. In practice the method described means that when choosing elliptic curves to use in cryptography one has to eliminate all curves whose group orders are equal to the order of the finite field."

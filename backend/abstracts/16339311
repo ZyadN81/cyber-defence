@@ -1,0 +1,1 @@
+"Code analysis tools can play an essential role in creating secure software. They can help catch common coding mistakes such as buffer overflow, cross-site scripting, SQL injection, and a variety of race conditions. With a certain amount of customization, they can also provide for deeper, application-specific inspection as well as a general audit against custom coding standards"

@@ -1,0 +1,1 @@
+"Allender [2] showed that if there are dense P languages containing only a finite set of Kolmogorov-simple strings, then all pseudorandom generators are insecure. We extend this by proving that if there are dense P (or even BPP) languages containing only a sparse set of Kolmogorov-simple strings, then all pseudorandom generators are insecure."

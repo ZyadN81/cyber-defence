@@ -1,0 +1,1 @@
+"Knapsack-based cryptosystems used to be popular in the beginning of public key cryptography before being all broken, all but the Chor-Rivest cryptosystem. In this paper, we show how to break this one with its suggested parameters: GF(p 24 ) and GF(256 25 ). We also give direction on possible extensions of our attack."

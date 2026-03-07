@@ -1,0 +1,1 @@
+"The slide attack, presented by Biryukov and Wagner, has already become a classical tool in cryptanalysis of block ciphers. While it was used to mount practical attacks on a few cryptosystems, its practical applicability is limited, as typically, its time complexity is lower bounded by $$2

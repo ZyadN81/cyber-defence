@@ -1,0 +1,1 @@
+"We extend definitions of information flow so as to quantify the amount of information passed; in other words, we give a formal definition of the capacity of covert channels. Our definition uses the process algebra CSP, and is based upon counting the number of different behaviours of a high level user that can be distinguished by a low level user."

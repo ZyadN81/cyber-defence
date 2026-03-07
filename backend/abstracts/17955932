@@ -1,0 +1,1 @@
+"Public cryptographic implementations work when the secret key is stored in a tightly secured environment. But what happens if adversaries penetrate that environment? Although many hardware countermeasures aim to keep adversaries at bay, white-box cryptography can provide yet another layer of protection at the software level."

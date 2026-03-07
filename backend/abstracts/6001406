@@ -1,0 +1,1 @@
+"An essential goal of virtual machine introspection is security policy enforcement in the presence of an untrustworthy OS. One obstacle to this goal is the difficulty in accurately extracting semantic meaning from the hypervisor's hardware-level view of a guest OS."

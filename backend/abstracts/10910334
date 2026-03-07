@@ -1,0 +1,1 @@
+"We present some observations on public-key cryptosystems that use the Chinese remaindering algorithm. Our results imply that careless implementations of such systems could be vulnerable. Only one faulty signature, in some explained context, is enough to recover the secret key."
