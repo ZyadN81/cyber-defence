@@ -12,10 +12,14 @@ import base64
 import logging
 from typing import List, Dict, Optional
 
-# Add dragon folder to path for importing DRAGON modules
-dragon_path = os.path.join(os.path.dirname(__file__), 'dragon')
-if dragon_path not in sys.path:
-        sys.path.insert(0, dragon_path)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DRAGON_ROOT = os.path.join(BASE_DIR, "dragon")
+DRAGON_MODELING_DIR = os.path.join(DRAGON_ROOT, "modeling")
+
+# Add dragon paths so local modules resolve regardless of current working directory.
+for p in (DRAGON_ROOT, DRAGON_MODELING_DIR):
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -52,9 +56,9 @@ app.add_middleware(
 # 2) Configuration & constants
 # ----------------------------
 D3F = Namespace("http://d3fend.mitre.org/ontologies/d3fend.owl#")
-ONTOLOGY_PATH = "d3fend_output.owl"
-ABSTRACTS_FOLDER = "abstracts"
-EMBEDDINGS_PATH = "enhanced_dragon_embeddings.pt"
+ONTOLOGY_PATH = os.path.join(BASE_DIR, "d3fend_output.owl")
+ABSTRACTS_FOLDER = os.path.join(BASE_DIR, "abstracts")
+EMBEDDINGS_PATH = os.path.join(BASE_DIR, "enhanced_dragon_embeddings.pt")
 
 # Model Configuration - Try DRAGON, fallback to DRAGON+
 USE_DRAGON_MODEL = True
@@ -103,12 +107,14 @@ class DragonEncoder:
         self.device = DEVICE
         self.dragon_available = False
         
-        # Try to import and initialize DRAGON model
+        # Try DRAGON-style encoder first.
         try:
-            from modeling.modeling_dragon import DRAGON, LMGNN, TextKGMessagePassing
-            from utils import utils
-            
             logger.info("Loading DRAGON model components...")
+
+            # Validate local DRAGON code is present in expected clone layout.
+            dragon_modeling_file = os.path.join(DRAGON_MODELING_DIR, "modeling_dragon.py")
+            if not os.path.exists(dragon_modeling_file):
+                raise FileNotFoundError(f"Missing DRAGON module: {dragon_modeling_file}")
             
             # Initialize base tokenizer
             self.tokenizer = AutoTokenizer.from_pretrained(DRAGON_MODEL_NAME)
