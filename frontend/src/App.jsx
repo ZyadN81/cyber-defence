@@ -22,9 +22,6 @@ function normalizeResults(data) {
 export default function App() {
   const [query, setQuery] = useState('');
   const [result, setResult] = useState(null);
-  const [architectureDiagram, setArchitectureDiagram] = useState(null);
-  const [dataFlowDiagram, setDataFlowDiagram] = useState(null);
-  const [modelInfo, setModelInfo] = useState(null);
   const [activeTab, setActiveTab] = useState('analyze');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState('');
@@ -74,36 +71,6 @@ export default function App() {
     }
   };
 
-  const loadArchitectureDiagram = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/api/model-architecture`);
-      const data = await res.json();
-      setArchitectureDiagram(data.diagram);
-    } catch (error) {
-      console.error('Failed to load architecture diagram:', error);
-    }
-  };
-
-  const loadDataFlowDiagram = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/api/data-flow`);
-      const data = await res.json();
-      setDataFlowDiagram(data.diagram);
-    } catch (error) {
-      console.error('Failed to load data flow diagram:', error);
-    }
-  };
-
-  const loadModelInfo = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/model-info`);
-      const data = await res.json();
-      setModelInfo(data);
-    } catch (error) {
-      console.error('Failed to load model info:', error);
-    }
-  };
-
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center">🐉 DRAGON Cybersecurity Analysis System</h1>
@@ -115,18 +82,6 @@ export default function App() {
           className={`px-6 py-3 font-medium ${activeTab === 'analyze' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'}`}
         >
           🔍 Analysis
-        </button>
-        <button
-          onClick={() => {setActiveTab('architecture'); loadArchitectureDiagram(); loadModelInfo();}}
-          className={`px-6 py-3 font-medium ${activeTab === 'architecture' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'}`}
-        >
-          🏗️ Model Architecture
-        </button>
-        <button
-          onClick={() => {setActiveTab('dataflow'); loadDataFlowDiagram();}}
-          className={`px-6 py-3 font-medium ${activeTab === 'dataflow' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'}`}
-        >
-          🔄 Data Flow
         </button>
       </div>
 
@@ -226,79 +181,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Architecture Tab */}
-      {activeTab === 'architecture' && (
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">🏗️ DRAGON Model Architecture</h2>
-          
-          {modelInfo && (
-            <div className="mb-8 p-6 border rounded-lg bg-gray-50">
-              <h3 className="text-xl font-semibold mb-4">📋 Model Specifications</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-2">Architecture Details</h4>
-                  <ul className="text-sm space-y-1">
-                    <li><strong>Type:</strong> {modelInfo.architecture.type}</li>
-                    <li><strong>Layers:</strong> {modelInfo.architecture.layers}</li>
-                    <li><strong>Hidden Size:</strong> {modelInfo.architecture.hidden_size}</li>
-                    <li><strong>Attention Heads:</strong> {modelInfo.architecture.attention_heads}</li>
-                    <li><strong>Vocabulary Size:</strong> {modelInfo.architecture.vocabulary_size}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Capabilities</h4>
-                  <ul className="text-sm space-y-1">
-                    {modelInfo.capabilities.map((cap, i) => (
-                      <li key={i}>• {cap}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {architectureDiagram && (
-            <div className="border rounded-lg p-4 bg-white">
-              <img 
-                src={`data:image/png;base64,${architectureDiagram}`} 
-                alt="DRAGON Model Architecture" 
-                className="w-full h-auto"
-              />
-            </div>
-          )}
-          
-          {!architectureDiagram && (
-            <div className="text-center py-8">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-              <p className="mt-2 text-gray-600">Loading architecture diagram...</p>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Data Flow Tab */}
-      {activeTab === 'dataflow' && (
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">🔄 DRAGON Data Flow</h2>
-          
-          {dataFlowDiagram && (
-            <div className="border rounded-lg p-4 bg-white">
-              <img 
-                src={`data:image/png;base64,${dataFlowDiagram}`} 
-                alt="DRAGON Data Flow" 
-                className="w-full h-auto"
-              />
-            </div>
-          )}
-          
-          {!dataFlowDiagram && (
-            <div className="text-center py-8">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-              <p className="mt-2 text-gray-600">Loading data flow diagram...</p>
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 }
