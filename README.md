@@ -63,8 +63,9 @@ The backend validates these at startup and prints explicit setup errors if somet
 
 ## First Run Behavior
 
-- First backend run may take time because transformer models can be downloaded.
-- If `enhanced_dragon_embeddings.pt` does not exist, embeddings are generated on first run.
+- Default startup uses a fast local TF-IDF fallback encoder to avoid multi-GB model downloads.
+- If `enhanced_dragon_embeddings.pt` does not exist, embeddings/index are generated on first run.
+- To force transformer-based startup, set `USE_TRANSFORMERS=1` before running backend.
 - Later runs are faster due to local cache reuse.
 
 ## API Endpoints

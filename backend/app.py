@@ -26,6 +26,7 @@ from pydantic import BaseModel
 from rdflib import Graph, URIRef, Namespace, RDF
 from transformers import AutoTokenizer, AutoModel
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.metrics import precision_recall_fscore_support, jaccard_score
 from scipy.stats import pearsonr
@@ -146,6 +147,13 @@ class DragonEncoder:
     def __init__(self):
         self.device = DEVICE
         self.dragon_available = False
+        self.simple_mode = False
+        self._tfidf_vectorizer: Optional[TfidfVectorizer] = None
+
+        # Default to a local fast path to avoid first-run multi-GB downloads.
+        if os.getenv("USE_TRANSFORMERS", "0") != "1":
+            self._enable_simple_mode("USE_TRANSFORMERS is not set to 1")
+            return
         
         # Try DRAGON-style encoder first.
         try:
@@ -157,10 +165,10 @@ class DragonEncoder:
                 raise FileNotFoundError(f"Missing DRAGON module: {dragon_modeling_file}")
             
             # Initialize base tokenizer
-            self.tokenizer = AutoTokenizer.from_pretrained(DRAGON_MODEL_NAME)
+            self.tokenizer = AutoTokenizer.from_pretrained(DRAGON_MODEL_NAME, local_files_only=True)
             
             # Try to create a simplified DRAGON-based encoder
-            self.base_model = AutoModel.from_pretrained(DRAGON_MODEL_NAME).to(self.device)
+            self.base_model = AutoModel.from_pretrained(DRAGON_MODEL_NAME, local_files_only=True).to(self.device)
             
             # Create a custom DRAGON-inspired encoder
             self.dragon_encoder = self._create_dragon_encoder()
@@ -171,7 +179,16 @@ class DragonEncoder:
         except Exception as e:
             logger.warning("DRAGON import failed: %s", e)
             logger.info("Loading dual encoders...")
-            self._load_dragon_plus()
+            try:
+                self._load_dragon_plus(local_only=True)
+            except Exception as plus_err:
+                self._enable_simple_mode(f"transformer models unavailable locally: {plus_err}")
+
+    def _enable_simple_mode(self, reason: str):
+        self.simple_mode = True
+        self.dragon_available = False
+        self._tfidf_vectorizer = TfidfVectorizer(max_features=25000, ngram_range=(1, 2), stop_words="english")
+        logger.warning("Using TF-IDF fallback encoder (%s)", reason)
     
     def _create_dragon_encoder(self):
         """Create a DRAGON-inspired encoder for text embedding.
@@ -221,17 +238,22 @@ class DragonEncoder:
         
         return DragonTextEncoder(self.base_model).to(self.device)
     
-    def _load_dragon_plus(self):
+    def _load_dragon_plus(self, local_only: bool = False):
         """Load DRAGON+ dual encoders as fallback."""
-        self.q_tokenizer = AutoTokenizer.from_pretrained(Q_MODEL_NAME)
-        self.q_encoder = AutoModel.from_pretrained(Q_MODEL_NAME).to(self.device)
-        self.p_tokenizer = AutoTokenizer.from_pretrained(P_MODEL_NAME)
-        self.p_encoder = AutoModel.from_pretrained(P_MODEL_NAME).to(self.device)
+        self.q_tokenizer = AutoTokenizer.from_pretrained(Q_MODEL_NAME, local_files_only=local_only)
+        self.q_encoder = AutoModel.from_pretrained(Q_MODEL_NAME, local_files_only=local_only).to(self.device)
+        self.p_tokenizer = AutoTokenizer.from_pretrained(P_MODEL_NAME, local_files_only=local_only)
+        self.p_encoder = AutoModel.from_pretrained(P_MODEL_NAME, local_files_only=local_only).to(self.device)
         
         self.q_encoder.eval()
         self.p_encoder.eval()
+
+    def build_simple_embeddings(self, texts: List[str]):
+        if not self.simple_mode or self._tfidf_vectorizer is None:
+            raise RuntimeError("TF-IDF fallback is not enabled")
+        return self._tfidf_vectorizer.fit_transform(texts)
     
-    def encode_text(self, text: str, is_query: bool = True) -> torch.Tensor:
+    def encode_text(self, text: str, is_query: bool = True):
         """Encode text using DRAGON or DRAGON+ models.
 
         Args:
@@ -241,6 +263,10 @@ class DragonEncoder:
         Returns:
             torch.Tensor: L2-normalized embedding for DRAGON; pooled output for DRAGON+.
         """
+        if self.simple_mode:
+            if self._tfidf_vectorizer is None:
+                raise RuntimeError("TF-IDF vectorizer is not initialized")
+            return self._tfidf_vectorizer.transform([text])
         if self.dragon_available:
             return self._encode_with_dragon(text)
         else:
@@ -284,24 +310,50 @@ encoder = DragonEncoder()
 # 5) Embedding cache management
 # -----------------------------
 # Generate embeddings once and cache them locally; otherwise, load the cache.
-if not os.path.exists(EMBEDDINGS_PATH):
+if encoder.simple_mode:
+    logger.info("Building TF-IDF embeddings for D3FEND abstracts...")
+    texts = []
+    valid_abstracts = []
+    for i, abs_item in enumerate(abstracts):
+        if i % 100 == 0:
+            logger.info("Processing abstract %d/%d", i, len(abstracts))
+
+        path = os.path.join(ABSTRACTS_FOLDER, abs_item["id"])
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                txt = f.read().strip()
+                if txt:
+                    abs_item["text"] = txt
+                    texts.append(txt)
+                    valid_abstracts.append(abs_item)
+
+    if not texts:
+        raise RuntimeError("No valid abstracts found to index.")
+
+    abstracts = valid_abstracts
+    embeddings = encoder.build_simple_embeddings(texts)
+    logger.info("Built TF-IDF index for %d abstracts.", len(valid_abstracts))
+elif not os.path.exists(EMBEDDINGS_PATH):
     logger.info("Generating embeddings for D3FEND abstracts...")
     vecs = []
-    for i, abs in enumerate(abstracts):
+    valid_abstracts = []
+    for i, abs_item in enumerate(abstracts):
         if i % 100 == 0:
             logger.info("Processing abstract %d/%d", i, len(abstracts))
         
-        path = os.path.join(ABSTRACTS_FOLDER, abs["id"])
+        path = os.path.join(ABSTRACTS_FOLDER, abs_item["id"])
         if os.path.exists(path):
             with open(path, "r", encoding="utf-8") as f:
-                abs["text"] = f.read().strip()
-                if abs["text"]:
-                    embedding = encoder.encode_text(abs["text"], is_query=False)
+                abs_item["text"] = f.read().strip()
+                if abs_item["text"]:
+                    embedding = encoder.encode_text(abs_item["text"], is_query=False)
                     vecs.append(embedding)
+                    valid_abstracts.append(abs_item)
     
     if not vecs:
         raise RuntimeError("No valid abstracts found to encode.")
     
+    abstracts = valid_abstracts
     embeddings = torch.stack(vecs).cpu()
     torch.save(embeddings, EMBEDDINGS_PATH)
     logger.info("Saved %d embeddings.", embeddings.size(0))
@@ -386,6 +438,12 @@ def generate_graph(tactic_scores: Dict[str, float]) -> Optional[str]:
     plt.close()
     return base64.b64encode(buf.getvalue()).decode('utf-8')
 
+
+def _embedding_count() -> int:
+    if hasattr(embeddings, "shape"):
+        return int(embeddings.shape[0])
+    return len(embeddings)
+
 class ProblemInput(BaseModel):
     problem: str
 
@@ -394,7 +452,9 @@ async def analyze(problem: ProblemInput):
     """Analyze a free-text problem statement."""
     try:
         # Encode query using enhanced DRAGON encoder
-        query_embedding = encoder.encode_text(problem.problem, is_query=True).cpu().numpy()
+        query_embedding = encoder.encode_text(problem.problem, is_query=True)
+        if isinstance(query_embedding, torch.Tensor):
+            query_embedding = query_embedding.cpu().numpy()
         
         # Compute similarities
         if query_embedding.ndim == 1:
@@ -474,7 +534,7 @@ async def analyze(problem: ProblemInput):
             "matches": matches,
             "graph": graph_img or "No tactics found",
             "metadata": {
-                "total_abstracts": len(embeddings),
+                "total_abstracts": _embedding_count(),
                 "matches_returned": len(matches),
                 "tactics_found": len(tactic_scores),
                 "model_type": "DRAGON",
@@ -590,7 +650,9 @@ def _category_for_labels(labels: List[str]) -> str:
 
 def _encode_problem(problem_text: str) -> Dict[str, object]:
     # Core of analyze() extracted for reuse
-    query_embedding = encoder.encode_text(problem_text, is_query=True).cpu().numpy()
+    query_embedding = encoder.encode_text(problem_text, is_query=True)
+    if isinstance(query_embedding, torch.Tensor):
+        query_embedding = query_embedding.cpu().numpy()
     if query_embedding.ndim == 1:
         query_embedding = query_embedding.reshape(1, -1)
     similarities = cosine_similarity(query_embedding, embeddings)[0]
