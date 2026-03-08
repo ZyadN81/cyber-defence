@@ -162,6 +162,24 @@ export default function App() {
           {result && (
             <div className="mt-8">
               <h2 className="text-2xl font-semibold mb-4">🐉 DRAGON Analysis Results:</h2>
+              {Array.isArray(result.matches) && result.matches.length > 0 && (
+                <div className="mb-6 p-6 border rounded-lg bg-slate-50">
+                  <h3 className="text-xl font-semibold mb-4">📚 Matched Abstracts</h3>
+                  <div className="grid gap-3 max-h-96 overflow-auto pr-1">
+                    {result.matches.map((m, i) => (
+                      <div key={`${m.id || 'abs'}-${i}`} className="p-3 border rounded-lg bg-white">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="text-xs bg-slate-200 px-2 py-1 rounded">ID: {m.id || 'N/A'}</span>
+                          <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                            Confidence: {m.confidence || 'N/A'}
+                          </span>
+                        </div>
+                        <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">{m.text || 'No abstract text available.'}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               
               {result.analysis_summary && (
                 <div className="mb-6 p-6 border rounded-lg bg-blue-50">
