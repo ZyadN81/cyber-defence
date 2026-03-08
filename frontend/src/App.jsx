@@ -1,5 +1,24 @@
 import React, { useState } from 'react';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
+
+function normalizeResults(data) {
+  if (Array.isArray(data?.results)) {
+    return data.results;
+  }
+
+  if (Array.isArray(data?.recommendations)) {
+    return data.recommendations.map((r) => ({
+      technique: r.tactic || r.technique || 'Unknown Technique',
+      confidence: r.confidence || 'N/A',
+      description: 'Recommended by semantic similarity with D3FEND abstracts.',
+      category: 'D3FEND',
+    }));
+  }
+
+  return [];
+}
+
 export default function App() {
   const [query, setQuery] = useState('');
   const [result, setResult] = useState(null);
@@ -7,20 +26,57 @@ export default function App() {
   const [dataFlowDiagram, setDataFlowDiagram] = useState(null);
   const [modelInfo, setModelInfo] = useState(null);
   const [activeTab, setActiveTab] = useState('analyze');
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysisError, setAnalysisError] = useState('');
+
+  const requestAnalysis = async (payload) => {
+    const endpoints = [`${API_BASE}/analyze`, `${API_BASE}/api/analyze`];
+    let lastError = null;
+
+    for (const endpoint of endpoints) {
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        return await res.json();
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    throw lastError || new Error('Failed to reach analysis endpoint.');
+  };
 
   const handleSearch = async () => {
-    const res = await fetch('http://127.0.0.1:5000/api/analyze', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: query }),
-    });
-    const data = await res.json();
-    setResult(data);
+    if (!query.trim()) {
+      return;
+    }
+
+    setIsAnalyzing(true);
+    setAnalysisError('');
+    setResult(null);
+
+    try {
+      const data = await requestAnalysis({ problem: query, query });
+      const normalized = normalizeResults(data);
+      setResult({ ...data, results: normalized });
+    } catch (error) {
+      setAnalysisError(
+        `Analysis failed. Check backend at ${API_BASE}. Details: ${error.message}`
+      );
+    } finally {
+      setIsAnalyzing(false);
+    }
   };
 
   const loadArchitectureDiagram = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/model-architecture');
+      const res = await fetch(`${API_BASE}/api/model-architecture`);
       const data = await res.json();
       setArchitectureDiagram(data.diagram);
     } catch (error) {
@@ -30,7 +86,7 @@ export default function App() {
 
   const loadDataFlowDiagram = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/data-flow');
+      const res = await fetch(`${API_BASE}/api/data-flow`);
       const data = await res.json();
       setDataFlowDiagram(data.diagram);
     } catch (error) {
@@ -40,7 +96,7 @@ export default function App() {
 
   const loadModelInfo = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/model-info');
+      const res = await fetch(`${API_BASE}/model-info`);
       const data = await res.json();
       setModelInfo(data);
     } catch (error) {
@@ -87,10 +143,21 @@ export default function App() {
           />
           <button
             onClick={handleSearch}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-medium"
+            disabled={isAnalyzing || !query.trim()}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-medium disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            🔍 Analyze with DRAGON
+            {isAnalyzing ? '⏳ Analyzing...' : '🔍 Analyze with DRAGON'}
           </button>
+
+          {isAnalyzing && (
+            <p className="mt-3 text-sm text-blue-700">Model is processing your request. This can take a few seconds.</p>
+          )}
+
+          {analysisError && (
+            <div className="mt-4 p-3 rounded-lg bg-red-50 text-red-700 border border-red-200 text-sm">
+              {analysisError}
+            </div>
+          )}
 
           {result && (
             <div className="mt-8">
