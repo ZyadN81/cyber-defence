@@ -1,0 +1,23 @@
+label,tactic,category,severity,definition,category_definition,mapping_status,notes
+cloudsecurity,Cloud_Access_Control,Data Breach,Medium,Security concerns in cloud platforms,Unauthorized exposure or loss of sensitive data,active,
+cyberattack,Threat_Hunting,Network Attacks,High,Deliberate adversarial attack against systems,Active attacks over networked infrastructure,active,
+cyberawareness,Security_Awareness_Training,System Vulnerability,Low,User awareness and secure behavior training,Weaknesses in processes or system posture,active,
+cybercrime,Incident_Response_Planning,Data Breach,Medium,Criminal activity using digital systems,Unauthorized exposure or loss of sensitive data,active,
+cyberdefense,Defense_in_Depth,System Vulnerability,Medium,Defensive controls for cyber resilience,Weaknesses in processes or system posture,active,
+cybersecurity,Security_Operations_Center,System Vulnerability,Medium,General cybersecurity operations domain,Weaknesses in processes or system posture,active,
+cyberthreat,Threat_Intelligence,Network Attacks,High,Indicators or intelligence on threats,Active attacks over networked infrastructure,active,
+cybertraining,Security_Awareness_Training,System Vulnerability,Low,Training and skills development in security,Weaknesses in processes or system posture,active,
+cyberworld,Digital_Risk_Management,System Vulnerability,Low,Broader digital risk environment,Weaknesses in processes or system posture,active,
+dataprotection,Data_Loss_Prevention,Data Breach,Medium,Protection of sensitive data at rest/in transit,Unauthorized exposure or loss of sensitive data,active,
+digitalsecurity,Digital_Asset_Protection,Data Breach,Medium,Protection of digital assets and information,Unauthorized exposure or loss of sensitive data,active,
+ddos,,Network Attacks,High,Distributed denial of service activity,Active attacks over networked infrastructure,missing_tactic,No tactic mapping in backend fallback map
+hacking,Intrusion_Detection,Network Attacks,High,Unauthorized intrusion attempts,Active attacks over networked infrastructure,active,
+infosec,Information_Security_Policy,System Vulnerability,Medium,Information security governance domain,Weaknesses in processes or system posture,active,
+iotsecurity,Device_Hardening,System Vulnerability,Low,Security of IoT devices and firmware,Weaknesses in processes or system posture,active,
+malware,Antivirus_Scanning,Malware,Critical,Malicious software infection or execution,Malicious code execution and persistence risks,active,
+networksecurity,Network_Segmentation,Network Attacks,Medium,Security controls for network communications,Active attacks over networked infrastructure,active,
+phishing,Email_Filtering,Network Attacks,High,Deceptive credential theft or social engineering,Active attacks over networked infrastructure,active,
+privacy,Access_Control,Data Breach,Medium,Protection of personal/sensitive information,Unauthorized exposure or loss of sensitive data,active,
+ransomware,Backup_and_Recovery,Malware,Critical,Malware encrypting systems/data for ransom,Malicious code execution and persistence risks,active,
+threatintelligence,Threat_Intelligence,Network Attacks,High,Threat intel collection and analysis,Active attacks over networked infrastructure,active,
+vulnerability,,System Vulnerability,Low,Known weakness exploitable by attackers,Weaknesses in processes or system posture,missing_tactic,No tactic mapping in backend fallback map

@@ -1,0 +1,251 @@
+record_id,abstract_id,abstract_uri,weak_labels,weak_category,weak_severity,annotator_1_labels,annotator_2_labels,final_adjudicated_labels,annotator_1_category,annotator_2_category,final_adjudicated_category,inclusion_flag,exclusion_reason,confidence,adjudication_notes,comments,validation_status,created_at_utc
+abstract_12154685,12154685,http://example.org/abstract12154685,cybertraining; dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_1780326,1780326,http://example.org/abstract1780326,cybertraining; dataprotection; digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_55287274,55287274,http://example.org/abstract55287274,cybersecurity; dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_46416138,46416138,http://example.org/abstract46416138,cybersecurity; dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_34705048,34705048,http://example.org/abstract34705048,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_15147420,15147420,http://example.org/abstract15147420,cyberdefense; cybersecurity; dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_11001663,11001663,http://example.org/abstract11001663,cyberattack; cybersecurity; digitalsecurity; malware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9360447,9360447,http://example.org/abstract9360447,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62784226,62784226,http://example.org/abstract62784226,cyberattack; cybersecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_2507891,2507891,http://example.org/abstract2507891,dataprotection; digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_2336012,2336012,http://example.org/abstract2336012,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_10072577,10072577,http://example.org/abstract10072577,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_33350135,33350135,http://example.org/abstract33350135,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_38140505,38140505,http://example.org/abstract38140505,cyberattack; cyberdefense; malware; networksecurity,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_195878358,195878358,http://example.org/abstract195878358,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_1970644,1970644,http://example.org/abstract1970644,cyberattack; cyberthreat; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_26360264,26360264,http://example.org/abstract26360264,cyberattack; dataprotection; networksecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62767031,62767031,http://example.org/abstract62767031,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_33956346,33956346,http://example.org/abstract33956346,dataprotection; digitalsecurity; networksecurity; privacy,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_69327826,69327826,http://example.org/abstract69327826,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_55438969,55438969,http://example.org/abstract55438969,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_452479,452479,http://example.org/abstract452479,cyberattack; dataprotection; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16771768,16771768,http://example.org/abstract16771768,cyberthreat; dataprotection; digitalsecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62947419,62947419,http://example.org/abstract62947419,cyberattack; cybercrime; digitalsecurity; malware; phishing,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_61677655,61677655,http://example.org/abstract61677655,cyberattack; cyberawareness; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_55434870,55434870,http://example.org/abstract55434870,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16458931,16458931,http://example.org/abstract16458931,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_31935131,31935131,http://example.org/abstract31935131,cyberthreat; dataprotection; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_61272462,61272462,http://example.org/abstract61272462,cyberthreat; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_10996018,10996018,http://example.org/abstract10996018,cyberattack; cyberawareness; cybersecurity; networksecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9878629,9878629,http://example.org/abstract9878629,cyberattack; cyberthreat; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62574382,62574382,http://example.org/abstract62574382,dataprotection; networksecurity; privacy,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_10330246,10330246,http://example.org/abstract10330246,dataprotection; digitalsecurity; networksecurity; privacy,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62203841,62203841,http://example.org/abstract62203841,cyberthreat; cyberworld; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62115486,62115486,http://example.org/abstract62115486,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_53879407,53879407,http://example.org/abstract53879407,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_3703392,3703392,http://example.org/abstract3703392,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_70273284,70273284,http://example.org/abstract70273284,cyberattack; cyberawareness; cyberworld; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_214764742,214764742,http://example.org/abstract214764742,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_14124597,14124597,http://example.org/abstract14124597,cyberattack; cyberthreat; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62569575,62569575,http://example.org/abstract62569575,cyberattack; cyberdefense; cybersecurity; cyberthreat; hacking; malware; privacy,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_8348265,8348265,http://example.org/abstract8348265,cyberattack; dataprotection; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_56430834,56430834,http://example.org/abstract56430834,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62221466,62221466,http://example.org/abstract62221466,cyberattack; cyberthreat; digitalsecurity; hacking; phishing,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_22670395,22670395,http://example.org/abstract22670395,cyberattack; dataprotection; networksecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_7286410,7286410,http://example.org/abstract7286410,cloudsecurity; cybersecurity; cyberthreat; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_3853985,3853985,http://example.org/abstract3853985,cloudsecurity; cybersecurity; dataprotection; digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_36144106,36144106,http://example.org/abstract36144106,cyberattack; cyberthreat; dataprotection; digitalsecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_55983742,55983742,http://example.org/abstract55983742,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_8439362,8439362,http://example.org/abstract8439362,cyberattack; cybersecurity; cyberworld,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_38229415,38229415,http://example.org/abstract38229415,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_10834815,10834815,http://example.org/abstract10834815,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62574679,62574679,http://example.org/abstract62574679,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_55435224,55435224,http://example.org/abstract55435224,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_69705437,69705437,http://example.org/abstract69705437,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62243582,62243582,http://example.org/abstract62243582,cloudsecurity; cyberattack; cyberawareness; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_17080069,17080069,http://example.org/abstract17080069,cloudsecurity; dataprotection; digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62532258,62532258,http://example.org/abstract62532258,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62190582,62190582,http://example.org/abstract62190582,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_29579806,29579806,http://example.org/abstract29579806,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_54449517,54449517,http://example.org/abstract54449517,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_7499590,7499590,http://example.org/abstract7499590,cyberattack; cyberthreat; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_17844093,17844093,http://example.org/abstract17844093,cyberattack; cybertraining; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_212957132,212957132,http://example.org/abstract212957132,cloudsecurity; cybercrime; cybersecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_46353875,46353875,http://example.org/abstract46353875,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_17151778,17151778,http://example.org/abstract17151778,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_86457433,86457433,http://example.org/abstract86457433,cybersecurity; dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62573077,62573077,http://example.org/abstract62573077,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_54904936,54904936,http://example.org/abstract54904936,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_33600953,33600953,http://example.org/abstract33600953,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_60687479,60687479,http://example.org/abstract60687479,cyberthreat; digitalsecurity; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_5790894,5790894,http://example.org/abstract5790894,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_36608732,36608732,http://example.org/abstract36608732,cyberattack; networksecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_2588218,2588218,http://example.org/abstract2588218,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_59767647,59767647,http://example.org/abstract59767647,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62680907,62680907,http://example.org/abstract62680907,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_54577431,54577431,http://example.org/abstract54577431,cyberthreat; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6908432,6908432,http://example.org/abstract6908432,cyberattack; cyberawareness; cybersecurity; cyberworld,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_30324719,30324719,http://example.org/abstract30324719,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_59721388,59721388,http://example.org/abstract59721388,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_31018027,31018027,http://example.org/abstract31018027,cyberattack; cyberawareness; cybersecurity; cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_174809966,174809966,http://example.org/abstract174809966,cyberattack; cyberthreat; iotsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62657748,62657748,http://example.org/abstract62657748,dataprotection; digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_70236279,70236279,http://example.org/abstract70236279,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_15454254,15454254,http://example.org/abstract15454254,cyberawareness; cyberthreat; dataprotection; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_53940145,53940145,http://example.org/abstract53940145,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_46957307,46957307,http://example.org/abstract46957307,cyberdefense; digitalsecurity; malware; privacy,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_53741610,53741610,http://example.org/abstract53741610,cybercrime; cyberthreat; cyberworld; dataprotection; digitalsecurity; networksecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_64092430,64092430,http://example.org/abstract64092430,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62674539,62674539,http://example.org/abstract62674539,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62224580,62224580,http://example.org/abstract62224580,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_33497879,33497879,http://example.org/abstract33497879,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_15026572,15026572,http://example.org/abstract15026572,cyberawareness; cyberworld; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_196105692,196105692,http://example.org/abstract196105692,dataprotection; networksecurity; privacy,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_155093469,155093469,http://example.org/abstract155093469,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9719398,9719398,http://example.org/abstract9719398,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_3940319,3940319,http://example.org/abstract3940319,cyberattack; cyberdefense; cyberthreat; digitalsecurity; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_11955714,11955714,http://example.org/abstract11955714,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16233643,16233643,http://example.org/abstract16233643,cloudsecurity; cybersecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16779538,16779538,http://example.org/abstract16779538,cyberattack; cybersecurity; digitalsecurity; networksecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62802992,62802992,http://example.org/abstract62802992,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6626532,6626532,http://example.org/abstract6626532,cyberattack; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62597804,62597804,http://example.org/abstract62597804,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62581609,62581609,http://example.org/abstract62581609,cyberattack; cyberthreat; malware; privacy,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_102351344,102351344,http://example.org/abstract102351344,dataprotection; digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_208131832,208131832,http://example.org/abstract208131832,cyberattack; cyberawareness; cybercrime; cyberthreat; hacking; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_51692559,51692559,http://example.org/abstract51692559,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_824829,824829,http://example.org/abstract824829,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_12836653,12836653,http://example.org/abstract12836653,cyberdefense; cyberthreat; cyberworld; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_54221143,54221143,http://example.org/abstract54221143,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_61674711,61674711,http://example.org/abstract61674711,cyberattack; cybersecurity; cyberworld; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_12195710,12195710,http://example.org/abstract12195710,cyberattack; dataprotection; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_56463380,56463380,http://example.org/abstract56463380,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_64849712,64849712,http://example.org/abstract64849712,cybersecurity; dataprotection; iotsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16676961,16676961,http://example.org/abstract16676961,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_69747344,69747344,http://example.org/abstract69747344,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_203532,203532,http://example.org/abstract203532,cyberattack; cyberthreat; dataprotection; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_53777868,53777868,http://example.org/abstract53777868,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_182212098,182212098,http://example.org/abstract182212098,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_18784858,18784858,http://example.org/abstract18784858,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_196047053,196047053,http://example.org/abstract196047053,cyberattack; cybertraining; cyberworld; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_11506573,11506573,http://example.org/abstract11506573,cyberthreat; dataprotection; digitalsecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_57194840,57194840,http://example.org/abstract57194840,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_26364059,26364059,http://example.org/abstract26364059,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62546463,62546463,http://example.org/abstract62546463,cloudsecurity; cyberthreat; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16962184,16962184,http://example.org/abstract16962184,dataprotection; networksecurity; privacy,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_209052447,209052447,http://example.org/abstract209052447,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_55004,55004,http://example.org/abstract55004,cyberattack; dataprotection; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_60679458,60679458,http://example.org/abstract60679458,cybercrime; cybersecurity; dataprotection; networksecurity; privacy,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_145958413,145958413,http://example.org/abstract145958413,cyberworld; dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_1374134,1374134,http://example.org/abstract1374134,cyberattack; dataprotection; digitalsecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_12226980,12226980,http://example.org/abstract12226980,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62228449,62228449,http://example.org/abstract62228449,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_58703719,58703719,http://example.org/abstract58703719,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_41873953,41873953,http://example.org/abstract41873953,cyberattack; cyberawareness; cybersecurity; cybertraining; dataprotection; digitalsecurity; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_5946873,5946873,http://example.org/abstract5946873,cyberattack; cybersecurity; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_43237909,43237909,http://example.org/abstract43237909,cyberattack; dataprotection; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9163208,9163208,http://example.org/abstract9163208,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_144057260,144057260,http://example.org/abstract144057260,cyberthreat; dataprotection; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_7261796,7261796,http://example.org/abstract7261796,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_211542461,211542461,http://example.org/abstract211542461,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_14169713,14169713,http://example.org/abstract14169713,cyberthreat; dataprotection; malware; privacy,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_14347267,14347267,http://example.org/abstract14347267,cyberattack; cyberthreat; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_110030617,110030617,http://example.org/abstract110030617,cybersecurity; cyberthreat; dataprotection; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_17292062,17292062,http://example.org/abstract17292062,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_53959044,53959044,http://example.org/abstract53959044,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_208060476,208060476,http://example.org/abstract208060476,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_63109674,63109674,http://example.org/abstract63109674,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_30615033,30615033,http://example.org/abstract30615033,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_26753591,26753591,http://example.org/abstract26753591,,Uncategorized,Unknown,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_60774450,60774450,http://example.org/abstract60774450,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62688296,62688296,http://example.org/abstract62688296,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62579021,62579021,http://example.org/abstract62579021,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_67131948,67131948,http://example.org/abstract67131948,cyberattack; ransomware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_70158874,70158874,http://example.org/abstract70158874,cyberattack; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_12753552,12753552,http://example.org/abstract12753552,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_52278768,52278768,http://example.org/abstract52278768,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_37486965,37486965,http://example.org/abstract37486965,dataprotection; networksecurity,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6110416,6110416,http://example.org/abstract6110416,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62160568,62160568,http://example.org/abstract62160568,cybercrime; cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_1552835,1552835,http://example.org/abstract1552835,dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_40061533,40061533,http://example.org/abstract40061533,cyberattack,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_35352732,35352732,http://example.org/abstract35352732,cybersecurity; dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_453110,453110,http://example.org/abstract453110,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6687798,6687798,http://example.org/abstract6687798,digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_5468504,5468504,http://example.org/abstract5468504,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_39351994,39351994,http://example.org/abstract39351994,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6417679,6417679,http://example.org/abstract6417679,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_2323758,2323758,http://example.org/abstract2323758,cyberattack,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62129809,62129809,http://example.org/abstract62129809,networksecurity,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6687479,6687479,http://example.org/abstract6687479,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_45472535,45472535,http://example.org/abstract45472535,dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_57286142,57286142,http://example.org/abstract57286142,cyberawareness,System Vulnerability,Low,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_170078727,170078727,http://example.org/abstract170078727,cyberattack; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_33450252,33450252,http://example.org/abstract33450252,cyberthreat; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_14252503,14252503,http://example.org/abstract14252503,cybersecurity,System Vulnerability,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_144083296,144083296,http://example.org/abstract144083296,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_51610255,51610255,http://example.org/abstract51610255,cybersecurity,System Vulnerability,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_144127619,144127619,http://example.org/abstract144127619,cyberdefense; cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62714037,62714037,http://example.org/abstract62714037,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_23846034,23846034,http://example.org/abstract23846034,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9044097,9044097,http://example.org/abstract9044097,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9368133,9368133,http://example.org/abstract9368133,cyberattack; cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_64663530,64663530,http://example.org/abstract64663530,hacking; ransomware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62239046,62239046,http://example.org/abstract62239046,digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_63266237,63266237,http://example.org/abstract63266237,dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62729582,62729582,http://example.org/abstract62729582,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_125261071,125261071,http://example.org/abstract125261071,digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_4581977,4581977,http://example.org/abstract4581977,malware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9535808,9535808,http://example.org/abstract9535808,dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_5714281,5714281,http://example.org/abstract5714281,cyberworld,System Vulnerability,Low,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62702886,62702886,http://example.org/abstract62702886,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62165251,62165251,http://example.org/abstract62165251,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_10910334,10910334,http://example.org/abstract10910334,digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_52818677,52818677,http://example.org/abstract52818677,dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_24368962,24368962,http://example.org/abstract24368962,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_23807770,23807770,http://example.org/abstract23807770,cybertraining; dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_69727522,69727522,http://example.org/abstract69727522,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_15001222,15001222,http://example.org/abstract15001222,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62895565,62895565,http://example.org/abstract62895565,cyberattack,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_21248162,21248162,http://example.org/abstract21248162,digitalsecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_108385680,108385680,http://example.org/abstract108385680,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_53061614,53061614,http://example.org/abstract53061614,malware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_7082295,7082295,http://example.org/abstract7082295,cybersecurity,System Vulnerability,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_67950651,67950651,http://example.org/abstract67950651,cyberthreat; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_9464150,9464150,http://example.org/abstract9464150,cyberthreat; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_3869987,3869987,http://example.org/abstract3869987,cyberattack; cybersecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_1026427,1026427,http://example.org/abstract1026427,dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_8977095,8977095,http://example.org/abstract8977095,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_44386194,44386194,http://example.org/abstract44386194,cyberattack; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_17666996,17666996,http://example.org/abstract17666996,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62712029,62712029,http://example.org/abstract62712029,cyberattack; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_181495565,181495565,http://example.org/abstract181495565,cyberthreat; cyberworld,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_156055581,156055581,http://example.org/abstract156055581,dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_33245742,33245742,http://example.org/abstract33245742,cyberawareness; cybertraining,System Vulnerability,Low,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62697144,62697144,http://example.org/abstract62697144,cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_5447961,5447961,http://example.org/abstract5447961,cyberthreat; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_17465566,17465566,http://example.org/abstract17465566,networksecurity,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62603248,62603248,http://example.org/abstract62603248,cyberworld; dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_105178,105178,http://example.org/abstract105178,dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62649693,62649693,http://example.org/abstract62649693,dataprotection; threatintelligence,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_55571279,55571279,http://example.org/abstract55571279,networksecurity,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_85452924,85452924,http://example.org/abstract85452924,cyberattack,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_58148916,58148916,http://example.org/abstract58148916,cyberawareness; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_63184957,63184957,http://example.org/abstract63184957,cyberthreat; threatintelligence,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_192523205,192523205,http://example.org/abstract192523205,malware; privacy,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16419710,16419710,http://example.org/abstract16419710,cybersecurity; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_23695293,23695293,http://example.org/abstract23695293,cyberdefense; malware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_59622025,59622025,http://example.org/abstract59622025,dataprotection; privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_34645915,34645915,http://example.org/abstract34645915,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_5404324,5404324,http://example.org/abstract5404324,cyberattack,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_5825981,5825981,http://example.org/abstract5825981,cyberattack; cyberthreat,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_60837409,60837409,http://example.org/abstract60837409,digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_4974807,4974807,http://example.org/abstract4974807,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_3808739,3808739,http://example.org/abstract3808739,cyberthreat; dataprotection,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_145972303,145972303,http://example.org/abstract145972303,dataprotection; digitalsecurity,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_207288923,207288923,http://example.org/abstract207288923,malware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_16792906,16792906,http://example.org/abstract16792906,malware,Malware,Critical,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_4905841,4905841,http://example.org/abstract4905841,cyberattack; privacy,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_209540939,209540939,http://example.org/abstract209540939,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_7600304,7600304,http://example.org/abstract7600304,cyberattack; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_21962503,21962503,http://example.org/abstract21962503,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6504700,6504700,http://example.org/abstract6504700,privacy,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_6476713,6476713,http://example.org/abstract6476713,cyberthreat; networksecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_43686332,43686332,http://example.org/abstract43686332,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_62706101,62706101,http://example.org/abstract62706101,dataprotection; networksecurity,Network Attacks,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_12467722,12467722,http://example.org/abstract12467722,cybersecurity; dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_52160512,52160512,http://example.org/abstract52160512,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_3050381,3050381,http://example.org/abstract3050381,dataprotection,Data Breach,Medium,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00
+abstract_7796482,7796482,http://example.org/abstract7796482,cyberattack; digitalsecurity,Network Attacks,High,,,,,,,PENDING,,,,,NOT_REVIEWED,2026-03-21T20:07:08.886069+00:00

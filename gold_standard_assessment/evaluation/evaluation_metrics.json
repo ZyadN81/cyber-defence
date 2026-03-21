@@ -1,0 +1,10 @@
+{
+  "status": "no_evaluable_rows",
+  "counts": {
+    "valid_rows": 0,
+    "invalid_rows": 0,
+    "skipped_rows": 250,
+    "unlabeled_rows": 0
+  },
+  "note": "At least one INCLUDE + ADJUDICATED/VALIDATED row with valid gold/pred labels is required."
+}

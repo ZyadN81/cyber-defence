@@ -1,0 +1,108 @@
+{
+  "files": [
+    {
+      "path": "data/label_taxonomy.csv",
+      "required_columns": [
+        "label",
+        "tactic",
+        "category",
+        "severity",
+        "definition",
+        "category_definition",
+        "mapping_status",
+        "notes"
+      ],
+      "id_column": "label",
+      "label_columns": [],
+      "non_empty_columns": ["label", "category", "severity", "mapping_status"]
+    },
+    {
+      "path": "data/weak_labels_abstracts.csv",
+      "required_columns": [
+        "record_id",
+        "source_type",
+        "abstract_id",
+        "abstract_uri",
+        "weak_labels",
+        "weak_tactics",
+        "derived_category",
+        "derived_severity",
+        "category_rule",
+        "severity_rule"
+      ],
+      "id_column": "record_id",
+      "label_columns": ["weak_labels"],
+      "non_empty_columns": ["record_id", "source_type", "abstract_id"]
+    },
+    {
+      "path": "data/weak_labels_scenarios.csv",
+      "required_columns": [
+        "record_id",
+        "source_type",
+        "scenario_id",
+        "scenario_name",
+        "scenario_type",
+        "scenario_text",
+        "weak_labels",
+        "weak_tactics",
+        "derived_category",
+        "derived_severity"
+      ],
+      "id_column": "record_id",
+      "label_columns": ["weak_labels"],
+      "non_empty_columns": ["record_id", "scenario_id", "scenario_name"]
+    },
+    {
+      "path": "data/manually_validated_gold_subset.csv",
+      "required_columns": [
+        "record_id",
+        "abstract_id",
+        "abstract_uri",
+        "weak_labels",
+        "annotator_1_labels",
+        "annotator_2_labels",
+        "final_adjudicated_labels",
+        "inclusion_flag",
+        "validation_status"
+      ],
+      "id_column": "record_id",
+      "label_columns": [
+        "weak_labels",
+        "annotator_1_labels",
+        "annotator_2_labels",
+        "final_adjudicated_labels"
+      ],
+      "non_empty_columns": ["record_id", "inclusion_flag", "validation_status"]
+    },
+    {
+      "path": "evaluation/predictions_template.csv",
+      "required_columns": [
+        "record_id",
+        "predicted_labels",
+        "predicted_tactics",
+        "prediction_source",
+        "prediction_timestamp",
+        "comments"
+      ],
+      "id_column": "record_id",
+      "label_columns": ["predicted_labels"],
+      "non_empty_columns": ["record_id"]
+    },
+    {
+      "path": "data/adjudication_queue.csv",
+      "required_columns": [
+        "record_id",
+        "abstract_id",
+        "abstract_uri",
+        "weak_labels",
+        "weak_category",
+        "priority_reason",
+        "queue_status",
+        "created_at_utc"
+      ],
+      "id_column": "record_id",
+      "label_columns": ["weak_labels"],
+      "non_empty_columns": ["record_id", "queue_status"]
+    }
+  ]
+}

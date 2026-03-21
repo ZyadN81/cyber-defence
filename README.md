@@ -75,6 +75,29 @@ The backend validates these at startup and prints explicit setup errors if somet
 - `GET /model-info`
 - `GET /figures`
 
+## Gold Standard Assessment Pack
+
+For thesis assessment-table recomputation and F1 auditability, use:
+
+- `gold_standard_assessment/START_HERE.md`
+- `gold_standard_assessment/data/weak_labels_abstracts.csv`
+- `gold_standard_assessment/data/manually_validated_gold_subset.csv`
+- `gold_standard_assessment/evaluation/f1_recompute_template.xlsx`
+- `gold_standard_assessment/evaluation/predictions_template.csv`
+- `gold_standard_assessment/reports/gold_standard_summary.json`
+
+Regenerate artifacts from repo root:
+
+```powershell
+C:/Users/ahmad/AppData/Local/Programs/Python/Python312/python.exe gold_standard_assessment/scripts/run_all.py --sample-size 250 --seed 42
+```
+
+Recompute evaluation outputs from manually validated rows:
+
+```powershell
+C:/Users/ahmad/AppData/Local/Programs/Python/Python312/python.exe gold_standard_assessment/scripts/run_evaluation.py
+```
+
 ## Troubleshooting
 
 - `FileNotFoundError` for ontology: run from `backend/` and verify `backend/d3fend_output.owl` exists.

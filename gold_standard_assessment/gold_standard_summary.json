@@ -1,0 +1,45 @@
+{
+  "artifact_version": "2.0",
+  "generated_at_utc": "2026-03-21T20:07:05.502824+00:00",
+  "methodology": {
+    "label_layer": "weak_labels_only",
+    "note": "Ontology/rule-derived outputs are weak labels and not manually validated gold truth."
+  },
+  "inputs": {
+    "ontology_path": "D:\\Ziad\\Final_Project\\backend\\d3fend_output.owl",
+    "manual_scenarios_path": "D:\\Ziad\\Final_Project\\manual_test_scenarios.txt",
+    "taxonomy_path": "D:\\Ziad\\Final_Project\\gold_standard_assessment\\data\\label_taxonomy.csv"
+  },
+  "outputs": {
+    "weak_labels_abstracts": "D:\\Ziad\\Final_Project\\gold_standard_assessment\\data\\weak_labels_abstracts.csv",
+    "weak_labels_scenarios": "D:\\Ziad\\Final_Project\\gold_standard_assessment\\data\\weak_labels_scenarios.csv"
+  },
+  "counts": {
+    "abstract_rows": 8592,
+    "scenario_rows": 10,
+    "taxonomy_labels": 22,
+    "records_with_unknown_labels": 0
+  },
+  "distribution": {
+    "abstract_category_distribution": {
+      "Network Attacks": 3371,
+      "Data Breach": 2504,
+      "Uncategorized": 2133,
+      "Malware": 230,
+      "System Vulnerability": 354
+    },
+    "abstract_severity_distribution": {
+      "High": 2832,
+      "Medium": 3258,
+      "Unknown": 2133,
+      "Critical": 230,
+      "Low": 139
+    },
+    "uncategorized_rule_distribution": {
+      "no_label_in_taxonomy": 2133
+    }
+  },
+  "taxonomy_gaps": {
+    "labels_missing_in_taxonomy": []
+  }
+}

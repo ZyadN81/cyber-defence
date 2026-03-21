@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-03-21T20:07:10.014632+00:00",
+  "weak_total": 8592,
+  "unknown_label_rows": 0,
+  "missing_taxonomy_labels": [],
+  "taxonomy_labels_without_tactic": [
+    "ddos",
+    "vulnerability"
+  ],
+  "manual_scenario_count": 10,
+  "gold_subset_rows": 250,
+  "included_gold_rows": 0,
+  "pending_manual_review": 250,
+  "weak_to_gold_include_ratio": 0.0
+}
