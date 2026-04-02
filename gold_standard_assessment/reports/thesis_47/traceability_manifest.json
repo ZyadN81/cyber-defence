@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-04-02T22:54:31.095477+00:00",
+  "manual_gold_source": "",
+  "gold_logic": "manual matrix when provided; otherwise weak-label provisional proxy based on expected-label overlap",
+  "formulas": {
+    "precision": "TP / (TP + FP)",
+    "recall": "TP / (TP + FN)",
+    "f1": "2 * precision * recall / (precision + recall)"
+  },
+  "artifacts": {
+    "scenario_mapping": "gold_standard_assessment/reports/thesis_47/scenario_concept_mapping.csv",
+    "gold_matrix": "gold_standard_assessment/reports/thesis_47/gold_standard_scenario_matrix.csv",
+    "gold_manual_template": "gold_standard_assessment/reports/thesis_47/gold_standard_scenario_matrix_manual_template.csv",
+    "keyword_tables": "gold_standard_assessment/reports/thesis_47/keyword_tables/*.csv",
+    "per_cell_confusion": "gold_standard_assessment/reports/thesis_47/confusion_matrix_per_cell.csv",
+    "method_summary": "gold_standard_assessment/reports/thesis_47/method_summary_metrics.csv"
+  }
+}

@@ -1,0 +1,31 @@
+scenario_id,scenario_name,method,total,tp,tn,fp,fn,precision,recall,f1
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword_search,8592,1113,5468,1502,509,0.425621,0.686190,0.525372
+simple_1,Simple 1: Basic Malware Detection 🦠,d3fend_without_abstracts,8592,1622,6960,10,0,0.993873,1.000000,0.996927
+simple_1,Simple 1: Basic Malware Detection 🦠,d3fend_plus_abstracts,8592,1622,5462,1508,0,0.518211,1.000000,0.682660
+simple_2,Simple 2: Phishing Email 📧,keyword_search,8592,912,6183,900,597,0.503311,0.604374,0.549232
+simple_2,Simple 2: Phishing Email 📧,d3fend_without_abstracts,8592,1509,7072,11,0,0.992763,1.000000,0.996368
+simple_2,Simple 2: Phishing Email 📧,d3fend_plus_abstracts,8592,1509,6176,907,0,0.624586,1.000000,0.768917
+simple_3,Simple 3: Network Security Issue 🌐,keyword_search,8592,1912,2963,3335,382,0.364399,0.833479,0.507095
+simple_3,Simple 3: Network Security Issue 🌐,d3fend_without_abstracts,8592,2294,6287,11,0,0.995228,1.000000,0.997608
+simple_3,Simple 3: Network Security Issue 🌐,d3fend_plus_abstracts,8592,2294,2959,3339,0,0.407243,1.000000,0.578781
+simple_4,Simple 4: Data Access Anomaly 📊,keyword_search,8592,2231,2959,1580,1822,0.585411,0.550456,0.567396
+simple_4,Simple 4: Data Access Anomaly 📊,d3fend_without_abstracts,8592,4053,4539,0,0,1.000000,1.000000,1.000000
+simple_4,Simple 4: Data Access Anomaly 📊,d3fend_plus_abstracts,8592,4053,2959,1580,0,0.719510,1.000000,0.836878
+simple_5,Simple 5: IoT Device Problem 📱,keyword_search,8592,800,4822,2683,287,0.229687,0.735971,0.350109
+simple_5,Simple 5: IoT Device Problem 📱,d3fend_without_abstracts,8592,1087,7505,0,0,1.000000,1.000000,1.000000
+simple_5,Simple 5: IoT Device Problem 📱,d3fend_plus_abstracts,8592,1087,4822,2683,0,0.288329,1.000000,0.447601
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword_search,8592,2490,4837,857,408,0.743950,0.859213,0.797438
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,d3fend_without_abstracts,8592,2898,5690,4,0,0.998622,1.000000,0.999310
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,d3fend_plus_abstracts,8592,2898,4835,859,0,0.771360,1.000000,0.870924
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword_search,8592,1963,2115,4504,10,0.303541,0.994932,0.465166
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,d3fend_without_abstracts,8592,1973,6619,0,0,1.000000,1.000000,1.000000
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,d3fend_plus_abstracts,8592,1973,2115,4504,0,0.304616,1.000000,0.466982
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword_search,8592,2278,3048,1680,1586,0.575543,0.589545,0.582460
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,d3fend_without_abstracts,8592,3864,4719,9,0,0.997676,1.000000,0.998837
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,d3fend_plus_abstracts,8592,3864,3044,1684,0,0.696467,1.000000,0.821079
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword_search,8592,981,4194,3133,284,0.238454,0.775494,0.364752
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,d3fend_without_abstracts,8592,1265,7327,0,0,1.000000,1.000000,1.000000
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,d3fend_plus_abstracts,8592,1265,4194,3133,0,0.287631,1.000000,0.446760
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword_search,8592,3464,1367,3038,723,0.532759,0.827323,0.648143
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,d3fend_without_abstracts,8592,4187,4405,0,0,1.000000,1.000000,1.000000
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,d3fend_plus_abstracts,8592,4187,1367,3038,0,0.579516,1.000000,0.733789

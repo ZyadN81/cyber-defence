@@ -1,0 +1,217 @@
+scenario_id,scenario_name,concept_type,concept
+simple_1,Simple 1: Basic Malware Detection 🦠,label,cyberthreat
+simple_1,Simple 1: Basic Malware Detection 🦠,d3fend_tactic,Threat_Intelligence
+simple_1,Simple 1: Basic Malware Detection 🦠,label,malware
+simple_1,Simple 1: Basic Malware Detection 🦠,d3fend_tactic,Antivirus_Scanning
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,antivirus
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,basic
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,detection
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,executable
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,indicator
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,infected
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,ioc
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,malicious
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,malware
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,risk
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,simple
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,threat
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,trojan
+simple_1,Simple 1: Basic Malware Detection 🦠,keyword,virus
+simple_2,Simple 2: Phishing Email 📧,label,cyberthreat
+simple_2,Simple 2: Phishing Email 📧,d3fend_tactic,Threat_Intelligence
+simple_2,Simple 2: Phishing Email 📧,label,phishing
+simple_2,Simple 2: Phishing Email 📧,d3fend_tactic,Email_Filtering
+simple_2,Simple 2: Phishing Email 📧,keyword,credential
+simple_2,Simple 2: Phishing Email 📧,keyword,email
+simple_2,Simple 2: Phishing Email 📧,keyword,fake login
+simple_2,Simple 2: Phishing Email 📧,keyword,indicator
+simple_2,Simple 2: Phishing Email 📧,keyword,ioc
+simple_2,Simple 2: Phishing Email 📧,keyword,phishing
+simple_2,Simple 2: Phishing Email 📧,keyword,risk
+simple_2,Simple 2: Phishing Email 📧,keyword,simple
+simple_2,Simple 2: Phishing Email 📧,keyword,spoof
+simple_2,Simple 2: Phishing Email 📧,keyword,threat
+simple_2,Simple 2: Phishing Email 📧,keyword,urgent
+simple_2,Simple 2: Phishing Email 📧,keyword,verify identity
+simple_3,Simple 3: Network Security Issue 🌐,label,cyberthreat
+simple_3,Simple 3: Network Security Issue 🌐,d3fend_tactic,Threat_Intelligence
+simple_3,Simple 3: Network Security Issue 🌐,label,networksecurity
+simple_3,Simple 3: Network Security Issue 🌐,d3fend_tactic,Network_Segmentation
+simple_3,Simple 3: Network Security Issue 🌐,keyword,firewall
+simple_3,Simple 3: Network Security Issue 🌐,keyword,indicator
+simple_3,Simple 3: Network Security Issue 🌐,keyword,intrusion
+simple_3,Simple 3: Network Security Issue 🌐,keyword,ioc
+simple_3,Simple 3: Network Security Issue 🌐,keyword,issue
+simple_3,Simple 3: Network Security Issue 🌐,keyword,network
+simple_3,Simple 3: Network Security Issue 🌐,keyword,risk
+simple_3,Simple 3: Network Security Issue 🌐,keyword,security
+simple_3,Simple 3: Network Security Issue 🌐,keyword,segmentation
+simple_3,Simple 3: Network Security Issue 🌐,keyword,simple
+simple_3,Simple 3: Network Security Issue 🌐,keyword,smb
+simple_3,Simple 3: Network Security Issue 🌐,keyword,threat
+simple_3,Simple 3: Network Security Issue 🌐,keyword,traffic
+simple_4,Simple 4: Data Access Anomaly 📊,label,dataprotection
+simple_4,Simple 4: Data Access Anomaly 📊,d3fend_tactic,Data_Loss_Prevention
+simple_4,Simple 4: Data Access Anomaly 📊,label,privacy
+simple_4,Simple 4: Data Access Anomaly 📊,d3fend_tactic,Access_Control
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,access
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,anomaly
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,confidential
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,data
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,database
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,dlp
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,exfiltration
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,leak
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,personal data
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,pii
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,privacy
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,records
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,sensitive information
+simple_4,Simple 4: Data Access Anomaly 📊,keyword,simple
+simple_5,Simple 5: IoT Device Problem 📱,label,iotsecurity
+simple_5,Simple 5: IoT Device Problem 📱,d3fend_tactic,Device_Hardening
+simple_5,Simple 5: IoT Device Problem 📱,label,networksecurity
+simple_5,Simple 5: IoT Device Problem 📱,d3fend_tactic,Network_Segmentation
+simple_5,Simple 5: IoT Device Problem 📱,keyword,botnet
+simple_5,Simple 5: IoT Device Problem 📱,keyword,camera
+simple_5,Simple 5: IoT Device Problem 📱,keyword,device
+simple_5,Simple 5: IoT Device Problem 📱,keyword,firewall
+simple_5,Simple 5: IoT Device Problem 📱,keyword,firmware
+simple_5,Simple 5: IoT Device Problem 📱,keyword,intrusion
+simple_5,Simple 5: IoT Device Problem 📱,keyword,iot
+simple_5,Simple 5: IoT Device Problem 📱,keyword,network
+simple_5,Simple 5: IoT Device Problem 📱,keyword,problem
+simple_5,Simple 5: IoT Device Problem 📱,keyword,segmentation
+simple_5,Simple 5: IoT Device Problem 📱,keyword,sensor
+simple_5,Simple 5: IoT Device Problem 📱,keyword,simple
+simple_5,Simple 5: IoT Device Problem 📱,keyword,smb
+simple_5,Simple 5: IoT Device Problem 📱,keyword,traffic
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,label,cyberattack
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,d3fend_tactic,Threat_Hunting
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,label,cyberthreat
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,d3fend_tactic,Threat_Intelligence
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,label,phishing
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,d3fend_tactic,Email_Filtering
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,advanced
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,adversary
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,attack
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,campaign
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,compromise
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,credential
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,exploit
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,fake login
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,indicator
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,intrusion
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,ioc
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,phishing
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,risk
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,sophisticated
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,spoof
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,threat
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,urgent
+advanced_1,Advanced 1: Sophisticated Phishing Campaign 🎣,keyword,verify identity
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,label,cyberattack
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,d3fend_tactic,Threat_Hunting
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,label,malware
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,d3fend_tactic,Antivirus_Scanning
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,label,ransomware
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,d3fend_tactic,Backup_and_Recovery
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,advanced
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,adversary
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,antivirus
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,attack
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,bitcoin
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,compromise
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,cryption
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,decrypt
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,encrypted
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,executable
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,exploit
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,infected
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,intrusion
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,malicious
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,malware
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,network
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,propagation
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,ransom
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,ransomware
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,trojan
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,virus
+advanced_2,Advanced 2: Ransomware Attack with Network Propagation 🔒,keyword,with
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,label,cloudsecurity
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,d3fend_tactic,Cloud_Access_Control
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,label,cyberthreat
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,d3fend_tactic,Threat_Intelligence
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,label,dataprotection
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,d3fend_tactic,Data_Loss_Prevention
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,advanced
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,aws
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,bucket
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,cloud
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,cloudtrail
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,compromise
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,data
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,database
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,dlp
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,exfiltration
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,iam
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,indicator
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,infrastructure
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,ioc
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,leak
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,records
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,risk
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,s3
+advanced_3,Advanced 3: Cloud Infrastructure Compromise ☁️,keyword,threat
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,label,iotsecurity
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,d3fend_tactic,Device_Hardening
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,label,malware
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,d3fend_tactic,Antivirus_Scanning
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,label,networksecurity
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,d3fend_tactic,Network_Segmentation
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,advanced
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,antivirus
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,botnet
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,camera
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,compromise
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,device
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,executable
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,firewall
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,firmware
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,formation
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,infected
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,intrusion
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,iot
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,malicious
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,malware
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,network
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,segmentation
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,sensor
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,smb
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,traffic
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,trojan
+advanced_4,Advanced 4: IoT Device Compromise and Botnet Formation 🤖,keyword,virus
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,label,cybercrime
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,d3fend_tactic,Incident_Response_Planning
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,label,dataprotection
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,d3fend_tactic,Data_Loss_Prevention
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,label,privacy
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,d3fend_tactic,Access_Control
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,advanced
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,confidential
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,criminal
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,cybercrime
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,data
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,database
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,dlp
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,exfiltration
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,fraud
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,insider
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,leak
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,personal data
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,pii
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,privacy
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,records
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,sensitive information
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,threat
+advanced_5,Advanced 5: Insider Threat with Data Exfiltration 👤,keyword,with
