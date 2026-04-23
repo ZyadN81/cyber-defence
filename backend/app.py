@@ -165,10 +165,10 @@ class DragonEncoder:
                 raise FileNotFoundError(f"Missing DRAGON module: {dragon_modeling_file}")
             
             # Initialize base tokenizer
-            self.tokenizer = AutoTokenizer.from_pretrained(DRAGON_MODEL_NAME, local_files_only=True)
+            self.tokenizer = AutoTokenizer.from_pretrained(DRAGON_MODEL_NAME, local_files_only=False)
             
             # Try to create a simplified DRAGON-based encoder
-            self.base_model = AutoModel.from_pretrained(DRAGON_MODEL_NAME, local_files_only=True).to(self.device)
+            self.base_model = AutoModel.from_pretrained(DRAGON_MODEL_NAME, local_files_only=False).to(self.device)
             
             # Create a custom DRAGON-inspired encoder
             self.dragon_encoder = self._create_dragon_encoder()
@@ -180,7 +180,7 @@ class DragonEncoder:
             logger.warning("DRAGON import failed: %s", e)
             logger.info("Loading dual encoders...")
             try:
-                self._load_dragon_plus(local_only=True)
+                self._load_dragon_plus(local_only=False)
             except Exception as plus_err:
                 self._enable_simple_mode(f"transformer models unavailable locally: {plus_err}")
 
