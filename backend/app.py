@@ -590,6 +590,7 @@ async def analyze(problem: ProblemInput):
         tactic_scores_raw: Dict[str, float] = {}
         query_hint_hits: List[str] = []
         matches = []
+        seen_match_ids = set()
 
         for rank, i in enumerate(idxs):
             abs_item = abstracts[i]
@@ -614,26 +615,28 @@ async def analyze(problem: ProblemInput):
                 weighted_score = confidence_pct * rank_weight * rarity_weight
                 tactic_scores_raw[tactic] = tactic_scores_raw.get(tactic, 0.0) + weighted_score
 
+            # Record unique abstract matches only once.
+            abs_id = abs_item["id"]
+            if abs_id not in seen_match_ids:
+                seen_match_ids.add(abs_id)
+                text_preview = abs_item["text"][:500] + "..." if len(abs_item["text"]) > 500 else abs_item["text"]
+                matches.append({
+                    "id": abs_id,
+                    "text": text_preview,
+                    "confidence": f"{confidence_pct:.1f}%",
+                    "raw_similarity": f"{similarity:.3f}",
+                    "tactics": [
+                        {"tactic": t, "confidence": f"{confidence_pct:.1f}%"}
+                        for t in tactics
+                    ]
+                })
+
         # Query-aware hint boosts improve intent alignment when semantic neighbors are broad.
         normalized_query = re.sub(r"[^a-z0-9\s]+", " ", problem.problem.lower())
         for pattern, hinted_tactic, boost in QUERY_TACTIC_HINTS:
             if re.search(pattern, normalized_query):
                 tactic_scores_raw[hinted_tactic] = tactic_scores_raw.get(hinted_tactic, 0.0) + boost
                 query_hint_hits.append(hinted_tactic)
-                
-            # Prepare match result
-            text_preview = abs_item["text"][:500] + "..." if len(abs_item["text"]) > 500 else abs_item["text"]
-            
-            matches.append({
-                "id": abs_item["id"],
-                "text": text_preview,
-                "confidence": f"{confidence_pct:.1f}%",
-                "raw_similarity": f"{similarity:.3f}",
-                "tactics": [
-                    {"tactic": t, "confidence": f"{confidence_pct:.1f}%"} 
-                    for t in tactics
-                ]
-            })
 
         # Normalize tactic scores into a user-friendly confidence range.
         tactic_scores: Dict[str, float] = {}
@@ -678,6 +681,15 @@ async def analyze(problem: ProblemInput):
                     if len(filtered_tactic_scores) >= MAX_RECOMMENDATIONS:
                         break
                     filtered_tactic_scores[hinted_tactic] = tactic_scores[hinted_tactic]
+
+        # Avoid returning a single tactic when several close alternatives exist.
+        if len(filtered_tactic_scores) < 2 and tactic_scores:
+            for tactic, conf in tactic_scores.items():
+                if tactic in filtered_tactic_scores:
+                    continue
+                filtered_tactic_scores[tactic] = conf
+                if len(filtered_tactic_scores) >= min(3, len(tactic_scores)):
+                    break
 
         # Generate visualization
         graph_img = generate_graph(filtered_tactic_scores)
