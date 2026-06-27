@@ -149,7 +149,6 @@ class DragonEncoder:
         self.dragon_available = False
         self.simple_mode = False
         self._tfidf_vectorizer: Optional[TfidfVectorizer] = None
-        self._char_vectorizer: Optional[TfidfVectorizer] = None
 
         # Default to a local fast path to avoid first-run multi-GB downloads.
         if os.getenv("USE_TRANSFORMERS", "0") != "1":
@@ -189,8 +188,6 @@ class DragonEncoder:
         self.simple_mode = True
         self.dragon_available = False
         self._tfidf_vectorizer = TfidfVectorizer(max_features=25000, ngram_range=(1, 2), stop_words="english")
-        # Character n-grams keep retrieval useful for short, noisy, or partially OOV text.
-        self._char_vectorizer = TfidfVectorizer(max_features=30000, analyzer="char_wb", ngram_range=(3, 5))
         logger.warning("Using TF-IDF fallback encoder (%s)", reason)
     
     def _create_dragon_encoder(self):
@@ -252,50 +249,9 @@ class DragonEncoder:
         self.p_encoder.eval()
 
     def build_simple_embeddings(self, texts: List[str]):
-        if not self.simple_mode or self._tfidf_vectorizer is None or self._char_vectorizer is None:
+        if not self.simple_mode or self._tfidf_vectorizer is None:
             raise RuntimeError("TF-IDF fallback is not enabled")
-        return {
-            "word": self._tfidf_vectorizer.fit_transform(texts),
-            "char": self._char_vectorizer.fit_transform(texts),
-        }
-
-    def compute_simple_similarities(self, text: str, word_embeddings, char_embeddings):
-        """Compute robust similarity scores in TF-IDF fallback mode.
-
-        Combines word and character TF-IDF cosine similarities and degrades
-        gracefully when one representation is OOV for the query.
-        """
-        if not self.simple_mode or self._tfidf_vectorizer is None or self._char_vectorizer is None:
-            raise RuntimeError("Simple-mode similarity computation requires TF-IDF fallback")
-
-        q_word = self._tfidf_vectorizer.transform([text])
-        q_char = self._char_vectorizer.transform([text])
-
-        word_nnz = int(q_word.nnz)
-        char_nnz = int(q_char.nnz)
-
-        word_sims = cosine_similarity(q_word, word_embeddings)[0] if word_nnz > 0 else np.zeros(word_embeddings.shape[0])
-        char_sims = cosine_similarity(q_char, char_embeddings)[0] if char_nnz > 0 else np.zeros(word_embeddings.shape[0])
-
-        if word_nnz == 0 and char_nnz == 0:
-            similarities = np.zeros(word_embeddings.shape[0], dtype=np.float32)
-            mode = "no_query_features"
-        elif word_nnz == 0:
-            similarities = char_sims
-            mode = "char_only"
-        elif char_nnz == 0:
-            similarities = word_sims
-            mode = "word_only"
-        else:
-            similarities = (0.7 * word_sims) + (0.3 * char_sims)
-            mode = "hybrid"
-
-        diagnostics = {
-            "mode": mode,
-            "word_nnz": word_nnz,
-            "char_nnz": char_nnz,
-        }
-        return similarities, diagnostics
+        return self._tfidf_vectorizer.fit_transform(texts)
     
     def encode_text(self, text: str, is_query: bool = True):
         """Encode text using DRAGON or DRAGON+ models.
@@ -375,9 +331,7 @@ if encoder.simple_mode:
         raise RuntimeError("No valid abstracts found to index.")
 
     abstracts = valid_abstracts
-    simple_embeddings = encoder.build_simple_embeddings(texts)
-    embeddings = simple_embeddings["word"]
-    char_embeddings = simple_embeddings["char"]
+    embeddings = encoder.build_simple_embeddings(texts)
     logger.info("Built TF-IDF index for %d abstracts.", len(valid_abstracts))
 elif not os.path.exists(EMBEDDINGS_PATH):
     logger.info("Generating embeddings for D3FEND abstracts...")
@@ -401,12 +355,10 @@ elif not os.path.exists(EMBEDDINGS_PATH):
     
     abstracts = valid_abstracts
     embeddings = torch.stack(vecs).cpu()
-    char_embeddings = None
     torch.save(embeddings, EMBEDDINGS_PATH)
     logger.info("Saved %d embeddings.", embeddings.size(0))
 else:
     embeddings = torch.load(EMBEDDINGS_PATH, map_location="cpu")
-    char_embeddings = None
     logger.info("Loaded %d embeddings.", embeddings.size(0))
 
 # 6) Tactics utilities & visualization
@@ -499,34 +451,19 @@ class ProblemInput(BaseModel):
 async def analyze(problem: ProblemInput):
     """Analyze a free-text problem statement."""
     try:
-        simple_mode_diagnostics = None
-
+        # Encode query using enhanced DRAGON encoder
+        query_embedding = encoder.encode_text(problem.problem, is_query=True)
+        if isinstance(query_embedding, torch.Tensor):
+            query_embedding = query_embedding.cpu().numpy()
+        
         # Compute similarities
-        if encoder.simple_mode:
-            similarities, simple_mode_diagnostics = encoder.compute_simple_similarities(
-                problem.problem,
-                embeddings,
-                char_embeddings,
-            )
-        else:
-            query_embedding = encoder.encode_text(problem.problem, is_query=True)
-            if isinstance(query_embedding, torch.Tensor):
-                query_embedding = query_embedding.cpu().numpy()
-
-            if query_embedding.ndim == 1:
-                query_embedding = query_embedding.reshape(1, -1)
-
-            similarities = cosine_similarity(query_embedding, embeddings)[0]
+        if query_embedding.ndim == 1:
+            query_embedding = query_embedding.reshape(1, -1)
+        
+        similarities = cosine_similarity(query_embedding, embeddings)[0]
         
         # Enhanced normalization for better score distribution
-        sim_min = float(np.min(similarities))
-        sim_max = float(np.max(similarities))
-        sim_range = sim_max - sim_min
-
-        if sim_range <= 1e-12:
-            scores = np.full(similarities.shape, CONFIDENCE_FLOOR, dtype=np.float32)
-        else:
-            scores = (similarities - sim_min) / (sim_range + 1e-6)
+        scores = (similarities - np.min(similarities)) / (np.max(similarities) - np.min(similarities) + 1e-6)
         
         # Apply confidence floor and ceiling for better user psychology
         scores = scores * (100 - CONFIDENCE_FLOOR) + CONFIDENCE_FLOOR
@@ -601,9 +538,7 @@ async def analyze(problem: ProblemInput):
                 "matches_returned": len(matches),
                 "tactics_found": len(tactic_scores),
                 "model_type": "DRAGON",
-                "confidence_range": f"{CONFIDENCE_FLOOR}%-95%",
-                "simple_mode": encoder.simple_mode,
-                "simple_mode_diagnostics": simple_mode_diagnostics,
+                "confidence_range": f"{CONFIDENCE_FLOOR}%-95%"
             }
         }
 
