@@ -148,6 +148,7 @@ class DragonEncoder:
         self.device = DEVICE
         self.dragon_available = False
         self.simple_mode = False
+        self.encoder_mode = "simple"
         self._tfidf_vectorizer: Optional[TfidfVectorizer] = None
         self._char_vectorizer: Optional[TfidfVectorizer] = None
 
@@ -156,38 +157,20 @@ class DragonEncoder:
             self._enable_simple_mode("USE_TRANSFORMERS is not set to 1")
             return
         
-        # Try DRAGON-style encoder first.
+        # Use the trained DRAGON+ dual encoders when transformer mode is enabled.
         try:
-            logger.info("Loading DRAGON model components...")
-
-            # Validate local DRAGON code is present in expected clone layout.
-            dragon_modeling_file = os.path.join(DRAGON_MODELING_DIR, "modeling_dragon.py")
-            if not os.path.exists(dragon_modeling_file):
-                raise FileNotFoundError(f"Missing DRAGON module: {dragon_modeling_file}")
-            
-            # Initialize base tokenizer
-            self.tokenizer = AutoTokenizer.from_pretrained(DRAGON_MODEL_NAME, local_files_only=False)
-            
-            # Try to create a simplified DRAGON-based encoder
-            self.base_model = AutoModel.from_pretrained(DRAGON_MODEL_NAME, local_files_only=False).to(self.device)
-            
-            # Create a custom DRAGON-inspired encoder
-            self.dragon_encoder = self._create_dragon_encoder()
+            logger.info("Loading DRAGON+ dual encoders...")
+            self._load_dragon_plus(local_only=False)
             self.dragon_available = True
-            
-            logger.info("DRAGON model loaded successfully!")
-            
+            self.encoder_mode = "dragon_plus"
+            logger.info("DRAGON+ dual encoders loaded successfully!")
         except Exception as e:
-            logger.warning("DRAGON import failed: %s", e)
-            logger.info("Loading dual encoders...")
-            try:
-                self._load_dragon_plus(local_only=False)
-            except Exception as plus_err:
-                self._enable_simple_mode(f"transformer models unavailable locally: {plus_err}")
+            self._enable_simple_mode(f"transformer models unavailable locally: {e}")
 
     def _enable_simple_mode(self, reason: str):
         self.simple_mode = True
         self.dragon_available = False
+        self.encoder_mode = "simple"
         self._tfidf_vectorizer = TfidfVectorizer(max_features=25000, ngram_range=(1, 2), stop_words="english")
         # Char n-grams reduce collapse for OOV/short queries in fallback mode.
         self._char_vectorizer = TfidfVectorizer(max_features=30000, analyzer="char_wb", ngram_range=(3, 5))
@@ -302,10 +285,11 @@ class DragonEncoder:
             if self._tfidf_vectorizer is None:
                 raise RuntimeError("TF-IDF vectorizer is not initialized")
             return self._tfidf_vectorizer.transform([text])
+        if self.encoder_mode == "dragon_plus":
+            return self._encode_with_dragon_plus(text, is_query)
         if self.dragon_available:
             return self._encode_with_dragon(text)
-        else:
-            return self._encode_with_dragon_plus(text, is_query)
+        raise RuntimeError(f"Unsupported encoder mode: {self.encoder_mode}")
     
     def _encode_with_dragon(self, text: str) -> torch.Tensor:
         """Encode using DRAGON model."""
@@ -341,6 +325,30 @@ class DragonEncoder:
 # Initialize Enhanced Encoder
 logger.info("Initializing DRAGON Encoder...")
 encoder = DragonEncoder()
+
+
+def _first_available_abstract_text() -> Optional[str]:
+    for abs_item in abstracts:
+        path = os.path.join(ABSTRACTS_FOLDER, abs_item["id"])
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                text = f.read().strip()
+            if text:
+                abs_item["text"] = text
+                return text
+    return None
+
+
+def _expected_embedding_dim() -> Optional[int]:
+    if encoder.simple_mode:
+        return None
+    sample_text = _first_available_abstract_text()
+    if not sample_text:
+        return None
+    sample_embedding = encoder.encode_text(sample_text, is_query=False)
+    if isinstance(sample_embedding, torch.Tensor):
+        return int(sample_embedding.shape[-1])
+    return None
 
 # 5) Embedding cache management
 # -----------------------------
@@ -399,6 +407,37 @@ else:
     embeddings = torch.load(EMBEDDINGS_PATH, map_location="cpu")
     char_embeddings = None
     logger.info("Loaded %d embeddings.", embeddings.size(0))
+
+    expected_dim = _expected_embedding_dim()
+    actual_dim = int(embeddings.shape[1]) if hasattr(embeddings, "shape") and len(embeddings.shape) > 1 else None
+    if expected_dim is not None and actual_dim is not None and expected_dim != actual_dim:
+        logger.warning(
+            "Embedding cache dimension mismatch (cache=%s, encoder=%s). Regenerating cache.",
+            actual_dim,
+            expected_dim,
+        )
+        vecs = []
+        valid_abstracts = []
+        for i, abs_item in enumerate(abstracts):
+            if i % 100 == 0:
+                logger.info("Re-encoding abstract %d/%d", i, len(abstracts))
+
+            path = os.path.join(ABSTRACTS_FOLDER, abs_item["id"])
+            if os.path.exists(path):
+                with open(path, "r", encoding="utf-8") as f:
+                    abs_item["text"] = f.read().strip()
+                    if abs_item["text"]:
+                        embedding = encoder.encode_text(abs_item["text"], is_query=False)
+                        vecs.append(embedding)
+                        valid_abstracts.append(abs_item)
+
+        if not vecs:
+            raise RuntimeError("No valid abstracts found to re-encode after cache mismatch.")
+
+        abstracts = valid_abstracts
+        embeddings = torch.stack(vecs).cpu()
+        torch.save(embeddings, EMBEDDINGS_PATH)
+        logger.info("Regenerated embedding cache with %d embeddings.", embeddings.size(0))
 
 # 6) Tactics utilities & visualization
 # ------------------------------------
