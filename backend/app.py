@@ -70,6 +70,8 @@ DRAGON_MODEL_NAME = "roberta-large"  # Base for DRAGON
 TOP_N_MATCHES = 10
 MIN_SIMILARITY_THRESHOLD = 0.1
 CONFIDENCE_FLOOR = 20
+MAX_RECOMMENDATIONS = 6
+RECOMMENDATION_WINDOW = 20
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -435,6 +437,20 @@ label_to_tactic = {
     "threatintelligence": "Threat_Intelligence"
 }
 
+ABSTRACT_TACTICS: List[List[str]] = []
+TACTIC_IDF: Dict[str, float] = {}
+QUERY_TACTIC_HINTS = [
+    (r"\bransomware\b", "Backup_and_Recovery", 60.0),
+    (r"\bphish(?:ing)?\b|\bcredential\b|\blogin\b", "Email_Filtering", 45.0),
+    (r"\bddos\b|\bdenial of service\b|\bflood\b", "Network_Segmentation", 45.0),
+    (r"\biot\b|\bfirmware\b|\bdevice\b", "Device_Hardening", 45.0),
+    (r"\bmalware\b|\btrojan\b|\bworm\b", "Antivirus_Scanning", 40.0),
+    (r"\bcloud\b|\biam\b|\bbucket\b|\bsaas\b", "Cloud_Access_Control", 40.0),
+    (r"\bexfiltrat(?:e|ion)\b|\binsider\b|\bdata leak\b", "Data_Loss_Prevention", 40.0),
+    (r"\bsql injection\b|\binjection\b", "Defense_in_Depth", 35.0),
+    (r"\bprivilege escalation\b|\bescalation\b|\brole binding\b", "Access_Control", 35.0),
+]
+
 def get_tactics(uri: URIRef) -> List[str]:
     """Extract tactics from D3FEND ontology for given abstract URI.
 
@@ -453,6 +469,39 @@ def get_tactics(uri: URIRef) -> List[str]:
             for _, _, tac in graph.triples((segment, D3F.mitigatedBy, None)):
                 tactics.add(str(tac).split("#")[-1])
     return list(tactics)
+
+
+def _build_tactic_statistics() -> None:
+    """Precompute tactics per abstract and IDF-style rarity weights.
+
+    Frequent generic tactics get lower weight while rarer, more specific tactics
+    get higher influence in final ranking.
+    """
+    global ABSTRACT_TACTICS, TACTIC_IDF
+
+    abstract_tactics: List[List[str]] = []
+    tactic_doc_freq: Dict[str, int] = {}
+
+    for abs_item in abstracts:
+        tactics = get_tactics(abs_item["uri"])
+        abstract_tactics.append(tactics)
+        for tactic in set(tactics):
+            tactic_doc_freq[tactic] = tactic_doc_freq.get(tactic, 0) + 1
+
+    total_docs = max(1, len(abstracts))
+    tactic_idf = {
+        tactic: float(np.log((1 + total_docs) / (1 + df)) + 1.0)
+        for tactic, df in tactic_doc_freq.items()
+    }
+
+    ABSTRACT_TACTICS = abstract_tactics
+    TACTIC_IDF = tactic_idf
+
+    logger.info(
+        "Built tactic statistics for %d abstracts and %d unique tactics.",
+        len(ABSTRACT_TACTICS),
+        len(TACTIC_IDF),
+    )
 
 def generate_graph(tactic_scores: Dict[str, float]) -> Optional[str]:
     """Generate a simple horizontal bar chart for tactic scores.
@@ -491,6 +540,9 @@ def _embedding_count() -> int:
     if hasattr(embeddings, "shape"):
         return int(embeddings.shape[0])
     return len(embeddings)
+
+
+_build_tactic_statistics()
 
 class ProblemInput(BaseModel):
     problem: str
@@ -535,7 +587,8 @@ async def analyze(problem: ProblemInput):
         # Get top matches
         idxs = np.argsort(similarities)[::-1][:TOP_N_MATCHES]
         
-        tactic_scores = {}
+        tactic_scores_raw: Dict[str, float] = {}
+        query_hint_hits: List[str] = []
         matches = []
 
         for rank, i in enumerate(idxs):
@@ -550,18 +603,23 @@ async def analyze(problem: ProblemInput):
                     with open(file_path, "r", encoding="utf-8") as f:
                         abs_item["text"] = f.read().strip()
                         
-            tactics = get_tactics(abs_item["uri"])
+            tactics = ABSTRACT_TACTICS[i] if i < len(ABSTRACT_TACTICS) else get_tactics(abs_item["uri"])
             if not tactics:
                 continue
                 
-            # Weight by rank for final tactic scoring
+            # Weight by rank and tactic rarity for final tactic scoring.
             rank_weight = 1 - (0.1 * rank)
             for tactic in tactics:
-                weighted_score = confidence_pct * rank_weight
-                tactic_scores[tactic] = max(
-                    tactic_scores.get(tactic, 0.0), 
-                    weighted_score
-                )
+                rarity_weight = TACTIC_IDF.get(tactic, 1.0)
+                weighted_score = confidence_pct * rank_weight * rarity_weight
+                tactic_scores_raw[tactic] = tactic_scores_raw.get(tactic, 0.0) + weighted_score
+
+        # Query-aware hint boosts improve intent alignment when semantic neighbors are broad.
+        normalized_query = re.sub(r"[^a-z0-9\s]+", " ", problem.problem.lower())
+        for pattern, hinted_tactic, boost in QUERY_TACTIC_HINTS:
+            if re.search(pattern, normalized_query):
+                tactic_scores_raw[hinted_tactic] = tactic_scores_raw.get(hinted_tactic, 0.0) + boost
+                query_hint_hits.append(hinted_tactic)
                 
             # Prepare match result
             text_preview = abs_item["text"][:500] + "..." if len(abs_item["text"]) > 500 else abs_item["text"]
@@ -577,33 +635,73 @@ async def analyze(problem: ProblemInput):
                 ]
             })
 
-        # Sort and format final tactic scores
-        tactic_scores = {
-            k: round(v, 1) 
-            for k, v in sorted(tactic_scores.items(), key=lambda x: x[1], reverse=True)
-            if v >= CONFIDENCE_FLOOR  # Filter low-confidence tactics
-        }
+        # Normalize tactic scores into a user-friendly confidence range.
+        tactic_scores: Dict[str, float] = {}
+        if tactic_scores_raw:
+            tactic_names = list(tactic_scores_raw.keys())
+            raw_vals = np.array([tactic_scores_raw[t] for t in tactic_names], dtype=np.float32)
+            raw_min = float(np.min(raw_vals))
+            raw_max = float(np.max(raw_vals))
+            raw_range = raw_max - raw_min
+
+            if raw_range <= 1e-12:
+                normalized_vals = np.full(raw_vals.shape, CONFIDENCE_FLOOR, dtype=np.float32)
+            else:
+                normalized_vals = (raw_vals - raw_min) / (raw_range + 1e-6)
+                normalized_vals = normalized_vals * (95 - CONFIDENCE_FLOOR) + CONFIDENCE_FLOOR
+
+            tactic_scores = {
+                k: round(float(v), 1)
+                for k, v in sorted(
+                    zip(tactic_names, normalized_vals),
+                    key=lambda x: x[1],
+                    reverse=True,
+                )
+            }
         
+        # Keep only salient top tactics to avoid repetitive long-tail recommendations.
+        filtered_tactic_scores: Dict[str, float] = {}
+        if tactic_scores:
+            top_confidence = next(iter(tactic_scores.values()))
+            min_confidence = max(CONFIDENCE_FLOOR, top_confidence - RECOMMENDATION_WINDOW)
+            for tactic, conf in tactic_scores.items():
+                if conf < min_confidence:
+                    continue
+                filtered_tactic_scores[tactic] = conf
+                if len(filtered_tactic_scores) >= MAX_RECOMMENDATIONS:
+                    break
+
+        # Ensure query hint tactics are surfaced when they were detected.
+        if query_hint_hits:
+            for hinted_tactic in query_hint_hits:
+                if hinted_tactic in tactic_scores and hinted_tactic not in filtered_tactic_scores:
+                    if len(filtered_tactic_scores) >= MAX_RECOMMENDATIONS:
+                        break
+                    filtered_tactic_scores[hinted_tactic] = tactic_scores[hinted_tactic]
+
         # Generate visualization
-        graph_img = generate_graph(tactic_scores)
+        graph_img = generate_graph(filtered_tactic_scores)
 
         return {
             "model": "DRAGON",
             "query": problem.problem,
             "recommendations": [
                 {"tactic": k, "confidence": f"{v}%"} 
-                for k, v in tactic_scores.items()
+                for k, v in filtered_tactic_scores.items()
             ],
             "matches": matches,
             "graph": graph_img or "No tactics found",
             "metadata": {
                 "total_abstracts": _embedding_count(),
                 "matches_returned": len(matches),
-                "tactics_found": len(tactic_scores),
+                "tactics_found": len(filtered_tactic_scores),
+                "tactics_before_filter": len(tactic_scores),
+                "unique_tactics_in_top_matches": len(tactic_scores_raw),
                 "model_type": "DRAGON",
                 "confidence_range": f"{CONFIDENCE_FLOOR}%-95%",
                 "simple_mode": encoder.simple_mode,
                 "simple_mode_diagnostics": simple_mode_diagnostics,
+                "query_hint_hits": sorted(set(query_hint_hits)),
             }
         }
 
