@@ -32,6 +32,119 @@ function parseConfidence(value) {
   return null;
 }
 
+function collectConfidenceValues(result) {
+  if (!Array.isArray(result?.results)) {
+    return [];
+  }
+
+  return result.results
+    .map((item) => parseConfidence(item?.confidence))
+    .filter((value) => Number.isFinite(value));
+}
+
+function deriveRiskLevel(summaryRisk, confidence) {
+  if (summaryRisk) {
+    return summaryRisk;
+  }
+
+  if (!Number.isFinite(confidence)) {
+    return null;
+  }
+
+  if (confidence >= 70) {
+    return "High";
+  }
+  if (confidence >= 40) {
+    return "Medium";
+  }
+  return "Low";
+}
+
+function deriveThreatLabels(result, query) {
+  const summaryLabels = result?.analysis_summary?.threat_categories;
+  if (Array.isArray(summaryLabels) && summaryLabels.length > 0) {
+    return summaryLabels;
+  }
+
+  const hintHits = result?.metadata?.query_hint_hits;
+  if (Array.isArray(hintHits) && hintHits.length > 0) {
+    return [...new Set(hintHits.map((hit) => String(hit).toLowerCase()))].slice(0, 3);
+  }
+
+  const derived = new Set();
+  const q = String(query || "").toLowerCase();
+
+  if (/(malware|virus|trojan|worm|ransomware)/.test(q)) {
+    derived.add("malware");
+  }
+  if (/(threat|attack|intrusion|breach|compromise)/.test(q)) {
+    derived.add("cyberthreat");
+  }
+  if (/(phish|credential|account)/.test(q)) {
+    derived.add("identity");
+  }
+
+  if (derived.size > 0) {
+    return Array.from(derived).slice(0, 3);
+  }
+
+  if (Array.isArray(result?.results)) {
+    result.results.forEach((item) => {
+      const name = String(item?.technique || "").toLowerCase();
+      if (name.includes("threat")) {
+        derived.add("cyberthreat");
+      }
+      if (name.includes("loss") || name.includes("asset")) {
+        derived.add("data-protection");
+      }
+      if (name.includes("security operations") || name.includes("soc")) {
+        derived.add("secops");
+      }
+    });
+  }
+
+  return Array.from(derived).slice(0, 3);
+}
+
+function deriveMethod(result) {
+  const summaryMethod = result?.analysis_summary?.method;
+  if (summaryMethod) {
+    return summaryMethod;
+  }
+
+  const simpleMode = result?.metadata?.simple_mode;
+  if (simpleMode === true) {
+    return "Hybrid TF-IDF + D3FEND Mapping";
+  }
+  if (simpleMode === false) {
+    return "Transformer Embeddings + D3FEND Mapping";
+  }
+
+  if (Array.isArray(result?.matches) && result.matches.length > 0) {
+    return "Semantic Retrieval + D3FEND Mapping";
+  }
+
+  if (Array.isArray(result?.results) && result.results.length > 0) {
+    return "DRAGON + D3FEND Mapping";
+  }
+
+  return null;
+}
+
+function deriveProcessingTime(result) {
+  const summaryTime = result?.analysis_summary?.processing_time;
+  if (summaryTime) {
+    return summaryTime;
+  }
+
+  const metadataTime = result?.metadata?.processing_time;
+  if (metadataTime) {
+    return metadataTime;
+  }
+
+  return null;
+}
+
 function toTitle(text) {
   return String(text || "")
     .replace(/_/g, " ")
@@ -41,18 +154,24 @@ function toTitle(text) {
 
 function buildSummary(result, query) {
   const summary = result?.analysis_summary || {};
-  const firstScore = result?.results?.[0]?.confidence;
-  const confidence = parseConfidence(summary.confidence_score ?? firstScore);
-  const labels = Array.isArray(summary.threat_categories)
-    ? summary.threat_categories
-    : [];
+  const scoreFromSummary = parseConfidence(summary.confidence_score);
+  const allScores = collectConfidenceValues(result);
+  const avgScore =
+    allScores.length > 0
+      ? allScores.reduce((acc, value) => acc + value, 0) / allScores.length
+      : null;
+  const confidence = Number.isFinite(scoreFromSummary)
+    ? scoreFromSummary
+    : avgScore;
+  const labels = deriveThreatLabels(result, query);
+  const riskLevel = deriveRiskLevel(summary.risk_level, confidence);
 
   return {
     confidence_score: confidence,
-    risk_level: summary.risk_level || null,
-    method: summary.method || null,
+    risk_level: riskLevel,
+    method: deriveMethod(result),
     threat_categories: labels,
-    processing_time: summary.processing_time || null,
+    processing_time: deriveProcessingTime(result),
     query: query || "",
   };
 }
@@ -108,7 +227,7 @@ export default function App() {
 
     setIsAnalyzing(true);
     setAnalysisError("");
-    setResult(null);
+    setResult((previous) => previous);
 
     try {
       const data = await requestAnalysis({ problem: query, query });
@@ -189,6 +308,12 @@ export default function App() {
 
         {result && dashboardSummary && (
           <section className="results-block">
+            {isAnalyzing && (
+              <p className="status-text">
+                Updating analysis results. This can take a few seconds.
+              </p>
+            )}
+
             <header className="results-hero">
               <h2>
                 <span aria-hidden="true">🤖</span> AI Analysis Results
