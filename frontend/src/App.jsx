@@ -249,7 +249,9 @@ export default function App() {
 
               <article className="summary-card method-card">
                 <h3>⚙️ Analysis Method</h3>
-                <p className="method-title">{dashboardSummary.method || "N/A"}</p>
+                <p className="method-title">
+                  {dashboardSummary.method || "N/A"}
+                </p>
                 <p className="muted">
                   Processing time:
                   {dashboardSummary.processing_time
