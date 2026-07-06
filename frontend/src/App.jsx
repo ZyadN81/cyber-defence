@@ -100,7 +100,9 @@ export default function App() {
 
   const defenseTactics = useMemo(() => {
     if (Array.isArray(result?.results) && result.results.length > 0) {
-      return result.results.map((item) => item.technique || "Unknown Technique");
+      return result.results.map(
+        (item) => item.technique || "Unknown Technique",
+      );
     }
     return ["Threat Intelligence", "Antivirus Scanning"];
   }, [result]);
@@ -115,7 +117,9 @@ export default function App() {
             </span>{" "}
             AI Analysis Results
           </h1>
-          <p>Comprehensive cybersecurity assessment powered by neural networks</p>
+          <p>
+            Comprehensive cybersecurity assessment powered by neural networks
+          </p>
         </header>
 
         <div className="controls">
@@ -140,8 +144,17 @@ export default function App() {
           <article className="stat-panel confidence">
             <h2>📉 Confidence Score</h2>
             <p className="value">{confidence}%</p>
-            <div className="progress-track" role="progressbar" aria-valuenow={confidence} aria-valuemin={0} aria-valuemax={100}>
-              <span className="progress-fill" style={{ width: `${confidence}%` }} />
+            <div
+              className="progress-track"
+              role="progressbar"
+              aria-valuenow={confidence}
+              aria-valuemin={0}
+              aria-valuemax={100}
+            >
+              <span
+                className="progress-fill"
+                style={{ width: `${confidence}%` }}
+              />
             </div>
             <p className="hint">Neural network certainty level</p>
           </article>
@@ -161,13 +174,19 @@ export default function App() {
                 </span>
               ))}
             </div>
-            <p className="hint">{labels.length} cybersecurity categories identified</p>
+            <p className="hint">
+              {labels.length} cybersecurity categories identified
+            </p>
           </article>
 
           <article className="stat-panel method-panel">
             <h2>⚙️ Analysis Method</h2>
-            <p className="method-title">{summary.method || "Pure AI DRAGON with D3FEND Integration"}</p>
-            <p className="hint">Processing time: {summary.processing_time || 2.498}s</p>
+            <p className="method-title">
+              {summary.method || "Pure AI DRAGON with D3FEND Integration"}
+            </p>
+            <p className="hint">
+              Processing time: {summary.processing_time || 2.498}s
+            </p>
           </article>
         </div>
 
@@ -180,7 +199,9 @@ export default function App() {
           </ul>
 
           <aside className="integration-note">
-            <strong>D3FEND Integration:</strong> These tactics are mapped from MITRE D3FEND knowledge base using neural network embeddings for comprehensive defense strategy planning.
+            <strong>D3FEND Integration:</strong> These tactics are mapped from
+            MITRE D3FEND knowledge base using neural network embeddings for
+            comprehensive defense strategy planning.
           </aside>
         </section>
       </section>
