@@ -29,7 +29,7 @@ function parseConfidence(value) {
       return Math.max(0, Math.min(100, numeric));
     }
   }
-  return 54;
+  return null;
 }
 
 function toTitle(text) {
@@ -45,14 +45,14 @@ function buildSummary(result, query) {
   const confidence = parseConfidence(summary.confidence_score ?? firstScore);
   const labels = Array.isArray(summary.threat_categories)
     ? summary.threat_categories
-    : ["malware", "cyberthreat"];
+    : [];
 
   return {
     confidence_score: confidence,
-    risk_level: summary.risk_level || "High",
-    method: summary.method || "Pure AI DRAGON with D3FEND Integration",
+    risk_level: summary.risk_level || null,
+    method: summary.method || null,
     threat_categories: labels,
-    processing_time: summary.processing_time || 2.498,
+    processing_time: summary.processing_time || null,
     query: query || "",
   };
 }
@@ -68,7 +68,7 @@ function buildTopTactics(result) {
     return derived;
   }
 
-  return ["Threat Intelligence", "Antivirus Scanning"];
+  return [];
 }
 
 export default function App() {
@@ -125,6 +125,11 @@ export default function App() {
 
   const dashboardSummary = result ? buildSummary(result, query) : null;
   const topTactics = result ? buildTopTactics(result) : [];
+  const confidenceValue = Number(dashboardSummary?.confidence_score);
+  const hasConfidence = Number.isFinite(confidenceValue);
+  const confidencePercent = hasConfidence
+    ? Math.max(0, Math.min(100, confidenceValue))
+    : 0;
 
   return (
     <main className="app-shell">
@@ -198,19 +203,19 @@ export default function App() {
               <article className="summary-card">
                 <h3>📉 Confidence Score</h3>
                 <p className="summary-value">
-                  {Math.round(Number(dashboardSummary.confidence_score))}%
+                  {hasConfidence ? `${Math.round(confidencePercent)}%` : "N/A"}
                 </p>
                 <div
                   className="progress-track"
                   role="progressbar"
-                  aria-valuenow={Number(dashboardSummary.confidence_score)}
+                  aria-valuenow={confidencePercent}
                   aria-valuemin={0}
                   aria-valuemax={100}
                 >
                   <span
                     className="progress-fill"
                     style={{
-                      width: `${Math.max(0, Math.min(100, Number(dashboardSummary.confidence_score)))}%`,
+                      width: `${confidencePercent}%`,
                     }}
                   />
                 </div>
@@ -220,7 +225,9 @@ export default function App() {
               <article className="summary-card">
                 <h3>⚠️ Risk Assessment</h3>
                 <span className="risk-pill">
-                  {(dashboardSummary.risk_level || "High").toUpperCase()} RISK
+                  {dashboardSummary.risk_level
+                    ? `${dashboardSummary.risk_level.toUpperCase()} RISK`
+                    : "N/A"}
                 </span>
                 <p className="muted">AI-powered threat level evaluation</p>
               </article>
@@ -242,9 +249,12 @@ export default function App() {
 
               <article className="summary-card method-card">
                 <h3>⚙️ Analysis Method</h3>
-                <p className="method-title">{dashboardSummary.method}</p>
+                <p className="method-title">{dashboardSummary.method || "N/A"}</p>
                 <p className="muted">
-                  Processing time: {dashboardSummary.processing_time || "N/A"}s
+                  Processing time:
+                  {dashboardSummary.processing_time
+                    ? ` ${dashboardSummary.processing_time}s`
+                    : " N/A"}
                 </p>
               </article>
             </div>
@@ -252,9 +262,13 @@ export default function App() {
             <div className="results-panel top-tactics-panel">
               <h3 className="panel-title">🛡️ Recommended Defense Tactics</h3>
               <ul className="top-tactics-list">
-                {topTactics.map((name, i) => (
-                  <li key={`${name}-${i}`}>🛡️ {name}</li>
-                ))}
+                {topTactics.length > 0 ? (
+                  topTactics.map((name, i) => (
+                    <li key={`${name}-${i}`}>🛡️ {name}</li>
+                  ))
+                ) : (
+                  <li>🛡️ N/A</li>
+                )}
               </ul>
 
               <aside className="integration-note compact-note">
