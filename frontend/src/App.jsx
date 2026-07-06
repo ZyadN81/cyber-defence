@@ -256,28 +256,25 @@ export default function App() {
   return (
     <main className="app-shell">
       <section className="analysis-card">
-        {!result && (
-          <>
-            <header className="hero-header">
-              <h1>🐉 DRAGON Cybersecurity Analysis System</h1>
-              <p>
-                Comprehensive cybersecurity assessment powered by neural
-                networks
-              </p>
-            </header>
+        <>
+          <header className="hero-header">
+            <h1>🐉 DRAGON Cybersecurity Analysis System</h1>
+            <p>
+              Comprehensive cybersecurity assessment powered by neural networks
+            </p>
+          </header>
 
-            <div className="tabs">
-              <button
-                onClick={() => setActiveTab("analyze")}
-                className={`tab-btn ${activeTab === "analyze" ? "active" : ""}`}
-              >
-                🔍 Analysis
-              </button>
-            </div>
-          </>
-        )}
+          <div className="tabs">
+            <button
+              onClick={() => setActiveTab("analyze")}
+              className={`tab-btn ${activeTab === "analyze" ? "active" : ""}`}
+            >
+              🔍 Analysis
+            </button>
+          </div>
+        </>
 
-        {activeTab === "analyze" && !result && (
+        {activeTab === "analyze" && (
           <section className="analysis-content">
             <h2 className="section-title">
               Cybersecurity Strategy Recommender

@@ -159,16 +159,16 @@ body {
 
 .results-hero h2 {
   margin: 0;
-  font-size: 44px;
-  line-height: 1.1;
-  letter-spacing: -0.6px;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
   font-weight: 700;
 }
 
 .results-hero p {
   margin: 8px 0 0;
   color: #9da5bf;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .kpi-top-grid {
@@ -244,31 +244,31 @@ body {
 }
 
 .summary-card {
-  min-height: 170px;
+  min-height: 150px;
   border-radius: 14px;
   background: var(--bg-panel);
   border: 1px solid #5d5a71;
-  padding: 15px;
+  padding: 14px;
 }
 
 .summary-card h3 {
   margin: 0;
-  font-size: 25px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .summary-value {
-  margin: 16px 0 10px;
+  margin: 12px 0 8px;
   color: var(--green);
-  font-size: 44px;
+  font-size: 42px;
   line-height: 1;
   font-weight: 700;
 }
 
 .muted {
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .tags-wrap {
@@ -284,17 +284,17 @@ body {
   background: var(--chip-bg);
   border: 1px solid rgba(166, 179, 225, 0.35);
   color: #d5defa;
-  padding: 6px 12px;
-  font-size: 13px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .risk-pill {
   display: inline-flex;
-  margin-top: 14px;
-  padding: 8px 14px;
+  margin-top: 12px;
+  padding: 7px 12px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.4px;
   color: #ffcbcf;
@@ -308,8 +308,8 @@ body {
 
 .method-title {
   margin: 12px 0 0;
-  font-size: 32px;
-  line-height: 1.35;
+  font-size: 17px;
+  line-height: 1.3;
   font-weight: 700;
 }
 
@@ -323,7 +323,7 @@ body {
 }
 
 .top-tactics-panel .panel-title {
-  font-size: 34px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -334,9 +334,9 @@ body {
 }
 
 .top-tactics-list li {
-  font-size: 30px;
+  font-size: 16px;
   color: #dce3f6;
-  padding: 11px 0;
+  padding: 8px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-weight: 600;
 }
