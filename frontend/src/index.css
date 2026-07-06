@@ -162,6 +162,7 @@ body {
   font-size: 44px;
   line-height: 1.1;
   letter-spacing: -0.6px;
+  font-weight: 700;
 }
 
 .results-hero p {
@@ -253,6 +254,7 @@ body {
 .summary-card h3 {
   margin: 0;
   font-size: 25px;
+  font-weight: 700;
 }
 
 .summary-value {
@@ -322,6 +324,7 @@ body {
 
 .top-tactics-panel .panel-title {
   font-size: 34px;
+  font-weight: 700;
 }
 
 .top-tactics-list {
@@ -335,6 +338,7 @@ body {
   color: #dce3f6;
   padding: 11px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
 }
 
 .top-tactics-list li:last-child {
@@ -402,7 +406,7 @@ body {
   color: #f0f3ff;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 700px) {
   .controls {
     grid-template-columns: 1fr;
   }
