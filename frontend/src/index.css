@@ -187,7 +187,7 @@ body {
 
 .panel-title {
   margin: 0 0 10px;
-  font-size: 34px;
+  font-size: 18px;
 }
 
 .abstracts-grid {
@@ -320,6 +320,10 @@ body {
   margin-bottom: 14px;
 }
 
+.top-tactics-panel .panel-title {
+  font-size: 34px;
+}
+
 .top-tactics-list {
   list-style: none;
   margin: 0;
@@ -420,6 +424,10 @@ body {
   }
 
   .panel-title {
+    font-size: 18px;
+  }
+
+  .top-tactics-panel .panel-title {
     font-size: 28px;
   }
 
