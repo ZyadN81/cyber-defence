@@ -68,7 +68,10 @@ function deriveThreatLabels(result, query) {
 
   const hintHits = result?.metadata?.query_hint_hits;
   if (Array.isArray(hintHits) && hintHits.length > 0) {
-    return [...new Set(hintHits.map((hit) => String(hit).toLowerCase()))].slice(0, 3);
+    return [...new Set(hintHits.map((hit) => String(hit).toLowerCase()))].slice(
+      0,
+      3,
+    );
   }
 
   const derived = new Set();
